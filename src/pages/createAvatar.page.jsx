@@ -1,16 +1,87 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const CreateAvatarPage = ({ setNextPage }) => {
-    return (
-        <div className="flex items-center justify-center min-h-screen">
-            <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                onClick={() => setNextPage()}
-            >
-                Tạo Avatar
-            </button>
-        </div>
-    )
-}
+    const [imageUrl, setImageUrl] = useState(null);
 
-export default CreateAvatarPage
+    const handleImageUpload = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = () => {
+                setImageUrl(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
+    return (
+        <div className="flex justify-center items-center h-screen">
+            <div className="w-80 p-6 bg-white bg-opacity-10 rounded-xl shadow-lg flex flex-col items-center">
+                <div className="w-48 h-48 rounded-full bg-gray-200 overflow-hidden flex items-center justify-center">
+                    {imageUrl ? (
+                        <img src={imageUrl} alt="User Avatar" className="w-full h-full object-cover" />
+                    ) : (
+                        <span className="text-gray-500">No Image</span>
+                    )}
+                </div>
+                <div className="mt-4 text-center">
+                    {/* File input for image upload with custom styling */}
+                    <div className="flex justify-center items-center mt-2 text-white border-b border-white w-full px-2">
+                        <label className="flex items-center w-full cursor-pointer justify-between">
+                            <span className="mr-2">Upload Ảnh</span>
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M5 20h14v-2H5v2zm7-18l-5 5h3v4h4v-4h3l-5-5zM5 16h14v-2H5v2z" />
+                            </svg>
+                            <input
+                                type="file"
+                                onChange={handleImageUpload}
+                                accept="image/*"
+                                className="hidden" // Hide the default file input
+                            />
+                        </label>
+                    </div>
+
+                    {/* Additional input fields with icons and borders */}
+                    <div className="flex justify-center items-center mt-2 text-white border-b border-white w-full px-2">
+                        <input
+                            type="text"
+                            placeholder="Tên Của Bạn"
+                            className="bg-transparent outline-none text-white w-full placeholder-white"
+                        />
+                        <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 14c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z" />
+                        </svg>
+                    </div>
+                    <div className="flex justify-center items-center mt-2 text-white border-b border-white w-full px-2">
+                        <input
+                            type="text"
+                            placeholder="Ngày làm việc"
+                            className="bg-transparent outline-none text-white w-full placeholder-white"
+                        />
+                        <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 2c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 10h-5v2h7V7h-2v5z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div className="w-80 p-6 bg-white bg-opacity-10 rounded-xl shadow-lg flex flex-col items-center ml-8">
+                <div className="w-48 h-48 rounded-full bg-gray-200 overflow-hidden">
+                    {imageUrl ? (
+                        <img src={imageUrl} alt="User Image" className="w-full h-full object-cover" />
+                    ) : (
+                        <span className="text-gray-500">No Image</span>
+                    )}
+                </div>
+                <button
+                    onClick={setNextPage}
+                    className="mt-6 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full"
+                >
+                    Pick Your Ecard
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default CreateAvatarPage;

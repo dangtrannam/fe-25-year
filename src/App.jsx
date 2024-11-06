@@ -5,6 +5,7 @@ import IntroductionPage from './pages/introduction.page';
 import ClipIntroductionPage from './pages/clip.page';
 import AvatarResultPage from './pages/avatarResult.page';
 import CreateAvatarPage from './pages/createAvatar.page';
+import BackgroundVideo from './components/background.component';
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
 
   return (
     <div className="relative">
+      <BackgroundVideo src="../public/video/background.webm" />
+
       <div className={getClassName(1)}>
         <StartPage setNextPage={() => setCurrentPage(2)} />
       </div>
