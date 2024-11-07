@@ -1,16 +1,19 @@
 import React from 'react'
+import HeaderComponent from '../components/header.component';
 
 const IntroductionPage = ({ setNextPage }) => {
     return (
-        <div className="flex items-center justify-center min-h-screen">
-            <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                onClick={() => setNextPage()}
-            >
-                Next
-            </button>
-        </div>
-    )
+        <>
+            <HeaderComponent />
+            <div className="flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center text-center mt-4 md:mt-6">
+
+                </div>
+
+
+            </div>
+        </>
+    );
 }
 
 export default IntroductionPage

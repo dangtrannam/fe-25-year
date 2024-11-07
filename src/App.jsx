@@ -18,8 +18,7 @@ function App() {
 
   return (
     <div className="relative">
-      <BackgroundVideo src="../public/video/background.webm" />
-
+      <BackgroundVideo src="/video/background.mp4" />
       <div className={getClassName(1)}>
         <StartPage setNextPage={() => setCurrentPage(2)} />
       </div>
