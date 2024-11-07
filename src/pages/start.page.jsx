@@ -1,14 +1,15 @@
 import React from 'react';
-import HeaderComponent from '../components/header.component';
 import SVGLogo from '../components/svg-logo.component';
+import HeaderComponent from '../components/header.component';
 
 const StartPage = ({ setNextPage }) => {
     return (
         <>
-            <div className="flex flex-col items-center justify-center mt-6">
+            <HeaderComponent />
+            <div className="flex flex-col items-center justify-center">
 
                 {/* SVG Logo with margin adjustments for alignment */}
-                <div className="flex flex-col items-center text-center mb-10 mt-4 md:mt-6">
+                <div className="flex flex-col items-center text-center mt-4 md:mt-6">
                     <SVGLogo />
                 </div>
 
