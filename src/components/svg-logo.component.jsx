@@ -2,7 +2,7 @@ import React from 'react';
 
 const SVGLogo = () => {
     return (
-        <div className="mx-auto max-w-[50%] sm:max-w-[60%] md:max-w-[75%] lg:max-w-[70%]">
+        <div className="max-w-[50%] sm:max-w-[70%] md:max-w-[80%] lg:max-w-[90%]">
             <svg
                 className="w-full h-auto"
                 width="460"
