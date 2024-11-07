@@ -17,7 +17,7 @@ function App() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden w-screen min-h-screen">
       <BackgroundVideo src="/video/background.mp4" />
       <div className={getClassName(1)}>
         <StartPage setNextPage={() => setCurrentPage(2)} />
