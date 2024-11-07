@@ -1,17 +1,31 @@
-import React from 'react'
+import React from 'react';
+import HeaderComponent from '../components/header.component';
+import SVGLogo from '../components/svg-logo.component';
 
 const StartPage = ({ setNextPage }) => {
     return (
-        <div className="flex items-center justify-center min-h-screen">
-            <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                onClick={() => setNextPage()}
+        <>
+            <HeaderComponent />
+            <div
+                className="flex flex-col items-center justify-center h-screen"
             >
-                Start
-            </button>
-        </div>
+                <div className="absolute top-4 left-4">
+                    <button className="text-white font-semibold">Chọn ngôn ngữ Vn/Eng</button>
+                </div>
 
-    )
-}
+                <div className="flex flex-col items-center text-center mb-10">
+                    <SVGLogo />
+                </div>
 
-export default StartPage
+                <button
+                    className="text-white font-bold py-4 px-16 text-[32px] flex items-center justify-center bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-[5px] border-white/[0.66] rounded-[39px]"
+                    onClick={() => setNextPage()}
+                >
+                    Start
+                </button>
+            </div>
+        </>
+    );
+};
+
+export default StartPage;
