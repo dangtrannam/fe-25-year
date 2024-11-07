@@ -2,8 +2,13 @@ import React from 'react';
 
 const BackgroundVideo = ({ src, type = "video/mp4" }) => {
     return (
-        <div className="fixed inset-0 -z-10 overflow-hidden">
-            <video className="w-full h-full object-cover" autoPlay loop muted>
+        <div className="fixed inset-0 -z-10 overflow-hidden flex justify-center items-center">
+            <video
+                className="absolute w-full h-full object-cover object-center"
+                autoPlay
+                loop
+                muted
+            >
                 <source src={src} type={type} />
                 Your browser does not support the video tag.
             </video>
