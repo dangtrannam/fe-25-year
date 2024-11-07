@@ -5,7 +5,6 @@ import SVGLogo from '../components/svg-logo.component';
 const StartPage = ({ setNextPage }) => {
     return (
         <>
-            <HeaderComponent />
             <div className="flex flex-col items-center justify-center mt-6">
 
                 {/* SVG Logo with margin adjustments for alignment */}
