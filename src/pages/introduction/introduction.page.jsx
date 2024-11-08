@@ -2,7 +2,7 @@ import React from 'react'
 import HeaderComponent from '../../components/header.component';
 import CircularProgress from './counter';
 
-const IntroductionPage = ({ setNextPage }) => {
+const IntroductionPage = ({ currentPage, setNextPage }) => {
     return (
         <div>
             <HeaderComponent />
@@ -12,11 +12,11 @@ const IntroductionPage = ({ setNextPage }) => {
                         <span>CHÀO MỪNG ĐẾN VỚI</span>
                         <span>HÀNH TRÌNH 25 NĂM</span>
                     </div>
-                    <div className='w-[60%] bg-gradient-to-t from-[#D9D9D9] to-[#191182] rounded-lg mt-4 h-72 relative overflow-hidden'>
+                    <div className='w-[60%] bg-transparent  rounded-lg mt-4 h-72 relative overflow-hidden'>
                         {/* Gradient overlays for fade effect */}
 
 
-                        <CircularProgress />
+                        <CircularProgress currentPage={currentPage} setNextPage={setNextPage} />
                     </div>
                 </div>
             </div>

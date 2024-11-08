@@ -23,7 +23,7 @@ function App() {
         <StartPage setNextPage={() => setCurrentPage(2)} />
       </div>
       <div className={getClassName(2)}>
-        <IntroductionPage setNextPage={() => setCurrentPage(3)} />
+        <IntroductionPage currentPage={currentPage} setNextPage={() => setCurrentPage(3)} />
       </div>
       <div className={getClassName(3)}>
         <ClipIntroductionPage setNextPage={() => setCurrentPage(4)} />

@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { TimelineMax } from 'gsap/gsap-core';
 
 // eslint-disable-next-line react/prop-types
-const CircularProgress = () => {
+const CircularProgress = ({ currentPage, setNextPage }) => {
     const [progress, setProgress] = useState(0);
     const intervalRef = useRef(null);
     const yearRef = useRef(1999);
@@ -13,8 +13,8 @@ const CircularProgress = () => {
 
     const runAnimation = () => {
         let i = 0;
-
         let testProgress = 0;
+
         let timeline = gsap.timeline({
             onRepeat: () => {
                 testProgress += 7;
@@ -29,9 +29,9 @@ const CircularProgress = () => {
         const interval = new TimelineMax({ repeat: -1 }).call(function () {
             if (yearRef.current <= targetYear) {
                 const yearElements = document.querySelectorAll('.year div');
-                const yearElement = yearElements[i]; // Use `i` directly to avoid skipping or incorrect index
+                const yearElement = yearElements[i];
                 gsap.to(yearElement, {
-                    scale: 2,
+                    scale: 5,
                     duration: 2,
                     onComplete: () => {
                         gsap.to(yearElement, {
@@ -52,26 +52,28 @@ const CircularProgress = () => {
             } else {
                 interval.kill();
 
-                // Navigate to the next page
-                // navigate('/avatar-creator')
                 setTimeout(() => {
                     setNextPage();
                     clearInterval(intervalRef.current);
                     timeline.kill();
                 }, 4000);
             }
-        }, null, null, 1000);
+        }, null, null, 2000);
     };
 
     useEffect(() => {
-        runAnimation();
-    }, []);
+        if (currentPage === 2) {
+            setTimeout(runAnimation, 3000)
+        }
+
+        return () => clearInterval(intervalRef.current);
+    }, [currentPage]);
 
     return (
         <div className="flex flex-col gap-4 justify-center items-center">
-            <div className="relative justify-center items-center my-auto -top-2">
+            <div className="relative justify-center items-center my-auto top-16">
                 <div className="flex items-center">
-                    <div className="flex flex-col year gap-[132px]">
+                    <div className="flex flex-col year gap-[128px]">
                         {years.map((year) => (
                             <div
                                 key={year}
