@@ -1,11 +1,11 @@
 import './index.css';
 import { useState } from "react";
 import StartPage from './pages/start.page';
-import IntroductionPage from './pages/introduction.page';
 import ClipIntroductionPage from './pages/clip.page';
 import AvatarResultPage from './pages/avatarResult.page';
 import CreateAvatarPage from './pages/createAvatar.page';
 import BackgroundVideo from './components/background.component';
+import IntroductionPage from './pages/introduction/introduction.page';
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         <StartPage setNextPage={() => setCurrentPage(2)} />
       </div>
       <div className={getClassName(2)}>
-        <IntroductionPage setNextPage={() => setCurrentPage(3)} />
+        <IntroductionPage currentPage={currentPage} setNextPage={() => setCurrentPage(3)} />
       </div>
       <div className={getClassName(3)}>
         <ClipIntroductionPage setNextPage={() => setCurrentPage(4)} />

@@ -1,7 +1,8 @@
 import React from 'react'
-import HeaderComponent from '../components/header.component';
+import HeaderComponent from '../../components/header.component';
+import CircularProgress from './counter';
 
-const IntroductionPage = ({ setNextPage }) => {
+const IntroductionPage = ({ currentPage, setNextPage }) => {
     return (
         <div>
             <HeaderComponent />
@@ -11,8 +12,11 @@ const IntroductionPage = ({ setNextPage }) => {
                         <span>CHÀO MỪNG ĐẾN VỚI</span>
                         <span>HÀNH TRÌNH 25 NĂM</span>
                     </div>
-                    <div className='w-3/4 max-w-4xl bg-white backdrop-blur-sm rounded-lg p-6 mt-4 border border-white/20 h-80'>
-                        {/* Content counter */}
+                    <div className='w-[60%] bg-transparent  rounded-lg mt-4 h-72 relative overflow-hidden'>
+                        {/* Gradient overlays for fade effect */}
+
+
+                        <CircularProgress currentPage={currentPage} setNextPage={setNextPage} />
                     </div>
                 </div>
             </div>
