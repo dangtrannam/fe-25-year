@@ -63,7 +63,7 @@ const CircularProgress = ({ currentPage, setNextPage }) => {
 
     useEffect(() => {
         if (currentPage === 2) {
-            setTimeout(runAnimation, 3000)
+            setTimeout(runAnimation, 500)
         }
 
         return () => clearInterval(intervalRef.current);
