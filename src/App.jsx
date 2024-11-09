@@ -1,12 +1,13 @@
 import './index.css';
+import 'video.js/dist/video-js.css';
+
 import { useState } from "react";
 import StartPage from './pages/start.page';
-import ClipIntroductionPage from './pages/clip.page';
 import AvatarResultPage from './pages/avatarResult.page';
 import CreateAvatarPage from './pages/createAvatar.page';
 import BackgroundVideo from './components/background.component';
 import IntroductionPage from './pages/introduction/introduction.page';
-
+import ClipIntroductionPage from "./pages/clip/clip.page.jsx";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
