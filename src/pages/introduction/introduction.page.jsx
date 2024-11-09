@@ -14,8 +14,6 @@ const IntroductionPage = ({ currentPage, setNextPage }) => {
                     </div>
                     <div className='w-[60%] bg-transparent  rounded-lg mt-4 h-72 relative overflow-hidden'>
                         {/* Gradient overlays for fade effect */}
-
-
                         <CircularProgress currentPage={currentPage} setNextPage={setNextPage} />
                     </div>
                 </div>
