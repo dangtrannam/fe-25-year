@@ -23,7 +23,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
     
 
     return (
-        <div className="flex flex-col md:flex-row justify-center items-center h-screen p-4">
+        <div className="flex justify-center items-center h-screen">
             <div className="p-6 flex flex-col items-center w-[584px]">
                 <div className="overflow-hidden flex items-center justify-center rounded-[23px]">
                     {/* {imageUrl ? (
