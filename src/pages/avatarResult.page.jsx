@@ -60,13 +60,13 @@ const AvatarResultPage = ({ setNextPage }) => {
 
     return (
         <div className="flex flex-col items-center justify-center gap-8 md:gap-10 py-8 md:py-[5vh] px-4">
-            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 w-full max-w-[80vw] md:max-w-[60vw]">
+            <div className="flex flex-col xl:flex-row items-center gap-6 md:gap-10 w-full max-w-[80vw] md:max-w-[60vw]">
                 <div className="overflow-hidden flex items-center justify-center w-full">
                     {avatarDataURL &&
                         <img src={avatarDataURL} alt="Avatar" className="w-[50vw] md:w-[35vh]" />
                     }
                 </div>
-                <div className="flex md:hidden flex-col items-center w-full space-y-4">
+                <div className="flex xl:hidden flex-col items-center w-full space-y-4">
                     <button
                         onClick={() => handleDownload(avatarDataURL)}
                         className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
@@ -91,8 +91,8 @@ const AvatarResultPage = ({ setNextPage }) => {
                 </div>
             </div>
             
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 w-full max-w-[80vw] md:max-w-[60vw]">
-                <div className="hidden md:flex flex-col items-center w-full space-y-4">
+            <div className="flex flex-col xl:flex-row items-center justify-center gap-6 md:gap-10 w-full max-w-[80vw] md:max-w-[60vw]">
+                <div className="hidden xl:flex flex-col items-center w-full space-y-4">
                     <button
                         onClick={() => handleDownload(avatarDataURL)}
                         className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
