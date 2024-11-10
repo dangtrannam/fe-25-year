@@ -127,6 +127,15 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 selectable: false,
             });
 
+            hoursText.set({
+                shadow: {
+                    color: 'rgba(89, 80, 197, 0.5)',
+                    blur: 10,
+                    offsetX: -5,
+                    offsetY: -5
+                }
+            });
+
             const boldStartIndex = fullText.indexOf("hours");
             const boldEndIndex = boldStartIndex + "hours".length;
 

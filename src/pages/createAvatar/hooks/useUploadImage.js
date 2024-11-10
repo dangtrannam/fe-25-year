@@ -74,7 +74,7 @@ export const useCardUploadImage = (canvasRef, userImageRef, userImageSrc, depend
             if (userImageSrc) {
                 const img = await new Promise((resolve) => {
                     fabric.Image.fromURL(userImageSrc, (img) => {
-                        img.scale(CARD_FRAME_WIDTH / img.width);
+                        img.scale(CARD_FRAME_WIDTH * 2 / img.width);
                         img.set({
                             left: 50,
                             bottom: 500,
