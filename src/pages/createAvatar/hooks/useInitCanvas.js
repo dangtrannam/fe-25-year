@@ -62,6 +62,8 @@ export const useInitCanvas = (canvasRef, setCanvas) => {
 };
 
 const CARD_FRAME_WIDTH = 500;
+const ratio = 500 / 900;
+const CARD_FRAME_HEIGHT = 900 * ratio;
 const card = "/images/card/ecardviet.png";
 export const useInitCardCanvas = (canvasRef, setCanvas) => {
     useEffect(() => {
