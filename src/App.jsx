@@ -9,7 +9,6 @@ import BackgroundVideo from './components/background.component';
 import IntroductionPage from './pages/introduction/introduction.page';
 import ClipIntroductionPage from "./pages/clip/clip.page.jsx";
 import { LanguageProvider } from './components/LanguageContext.jsx';
-import { videoBackground } from './pages/clip/video.constant.jsx';
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,7 +21,7 @@ function App() {
   return (
     <LanguageProvider>
       <div className="relative overflow-hidden w-screen min-h-screen">
-        <BackgroundVideo src={videoBackground} />
+        <BackgroundVideo src='/video/background.mp4' />
         <div className={getClassName(1)}>
           <StartPage setNextPage={() => setCurrentPage(2)} />
         </div>
