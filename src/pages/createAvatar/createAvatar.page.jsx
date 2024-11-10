@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import {useUploadImage, useInitCanvas} from './hooks';
 
 const CreateAvatarPage = ({ setNextPage }) => {
-    const [imageUrl, setImageUrl] = useState(null);
+    const [userImageSrc, setUserImageSrc] = useState(null);
+    const userImageRef = useRef(null);
+    const [avatarCanvas, setAvatarCanvas] = useState(null);
+
+    const avatarCanvasRef = useRef(null);
+
+    useInitCanvas(avatarCanvasRef, setAvatarCanvas);
+    useUploadImage(avatarCanvasRef, userImageRef, [userImageSrc, avatarCanvasRef]);
 
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = () => {
-                setImageUrl(reader.result);
+                setUserImageSrc(reader.result);
             };
             reader.readAsDataURL(file);
         }
@@ -18,11 +26,12 @@ const CreateAvatarPage = ({ setNextPage }) => {
         <div className="flex justify-center items-center h-screen">
             <div className="w-80 p-6 bg-white bg-opacity-10 rounded-xl shadow-lg flex flex-col items-center">
                 <div className="w-48 h-48 rounded-full bg-gray-200 overflow-hidden flex items-center justify-center">
-                    {imageUrl ? (
+                    {/* {imageUrl ? (
                         <img src={imageUrl} alt="User Avatar" className="w-full h-full object-cover" />
                     ) : (
                         <span className="text-gray-500">No Image</span>
-                    )}
+                    )} */}
+                    <canvas ref={avatarCanvasRef} className={``} id='avatarCanvas' />
                 </div>
                 <div className="mt-4 text-center">
                     {/* File input for image upload with custom styling */}
@@ -67,8 +76,8 @@ const CreateAvatarPage = ({ setNextPage }) => {
 
             <div className="w-80 p-6 bg-white bg-opacity-10 rounded-xl shadow-lg flex flex-col items-center ml-8">
                 <div className="w-48 h-48 rounded-full bg-gray-200 overflow-hidden">
-                    {imageUrl ? (
-                        <img src={imageUrl} alt="User Image" className="w-full h-full object-cover" />
+                    {userImageSrc ? (
+                        <img src={userImageSrc} alt="User Image" className="w-full h-full object-cover" />
                     ) : (
                         <span className="text-gray-500">No Image</span>
                     )}

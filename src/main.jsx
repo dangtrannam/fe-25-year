@@ -3,7 +3,7 @@ import App from "./App.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Layout } from "./Layout.jsx";
 import StartPage from "./pages/start.page.jsx";
-import CreateAvatarPage from "./pages/createAvatar.page.jsx";
+import CreateAvatarPage from "./pages/createAvatar/createAvatar.page.jsx";
 import AvatarResultPage from "./pages/avatarResult.page.jsx";
 import IntroductionPage from "./pages/introduction/introduction.page.jsx";
 import ClipIntroductionPage from "./pages/clip/clip.page.jsx";
