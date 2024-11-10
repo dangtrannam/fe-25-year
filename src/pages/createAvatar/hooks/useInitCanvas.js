@@ -1,38 +1,40 @@
 import { fabric } from 'fabric';
 import { useEffect } from "react";
-const FRAME_SIZE = 17.5 * 16; // 17.5rem
-const USER_WIDTH = 17.5 * 16; // 17.5rem
 
-const frameEng = "/images/avatar/ENG-FRAMEAVA.png"
-const frameVi = "/images/avatar/VIET-FRAMEAVA.png"
+const FRAME_SIZE_BASE = 17.5 * 16; // Base size, will be adjusted based on screen
+const USER_WIDTH_BASE = 17.5 * 16; // Base size
+
+const frameEng = "/images/avatar/ENG-FRAMEAVA.png";
+const frameVi = "/images/avatar/VIET-FRAMEAVA.png";
 
 export const useInitCanvas = (canvasRef, setCanvas, language) => {
     useEffect(() => {
+        // Responsive frame size
+        const frameSize = window.innerWidth < 768 ? window.innerWidth * 0.8 : FRAME_SIZE_BASE;
+
         const initCanvas = new fabric.Canvas(canvasRef.current, {
-            width: FRAME_SIZE,
-            height: FRAME_SIZE,
+            width: frameSize,
+            height: frameSize,
             preserveObjectStacking: true,
         });
 
-        // Add border radius
+        // Add border radius for rounded corners
         const clipPath = new fabric.Rect({
-            width: FRAME_SIZE,
-            height: FRAME_SIZE,
+            width: frameSize,
+            height: frameSize,
             rx: 24,
             ry: 24,
             absolutePositioned: true,
         });
 
         initCanvas.clipPath = clipPath;
-
         setCanvas(initCanvas);
 
         const loadFrameImage = async () => {
             const frameImage = await new Promise((resolve) => {
-                fabric.Image.fromURL(
-                    language === 'vi' ? frameVi : frameEng, (img) => {
-                    img.scaleToWidth(FRAME_SIZE);
-                    img.scaleToHeight(FRAME_SIZE);
+                fabric.Image.fromURL(language === 'vi' ? frameVi : frameEng, (img) => {
+                    img.scaleToWidth(frameSize);
+                    img.scaleToHeight(frameSize);
                     img.set({
                         selectable: false,
                         evented: false,
@@ -56,45 +58,46 @@ export const useInitCanvas = (canvasRef, setCanvas, language) => {
                     initCanvas.remove(obj);
                     obj.dispose();
                 });
-                initCanvas.dispose(); // Dispose of the Fabric.js canvas
+                initCanvas.dispose();
             }
         };
     }, [language]);
 };
 
-const CARD_FRAME_WIDTH = 500;
-const ratio = 500 / 900;
-const CARD_FRAME_HEIGHT = 900 * ratio;
+const CARD_FRAME_BASE_WIDTH = 500;
+const CARD_FRAME_BASE_HEIGHT = 900;
 const cardVI = "/images/card/ecardviet.png";
 const cardEN = "/images/card/ecardeng.png";
+
 export const useInitCardCanvas = (canvasRef, setCanvas, language) => {
     useEffect(() => {
+        // Responsive card size
+        const cardFrameWidth = window.innerWidth < 768 ? window.innerWidth * 0.8 : CARD_FRAME_BASE_WIDTH;
+        const cardFrameHeight = (CARD_FRAME_BASE_HEIGHT / CARD_FRAME_BASE_WIDTH) * cardFrameWidth;
+
         const initCanvas = new fabric.Canvas(canvasRef.current, {
-            width: CARD_FRAME_WIDTH,
-            height: 900,
+            width: cardFrameWidth,
+            height: cardFrameHeight,
             preserveObjectStacking: true,
         });
 
         // Add border radius
         const clipPath = new fabric.Rect({
-            width: CARD_FRAME_WIDTH,
-            height: 900,
+            width: cardFrameWidth,
+            height: cardFrameHeight,
             rx: 24,
             ry: 24,
             absolutePositioned: true,
         });
 
         initCanvas.clipPath = clipPath;
-
         setCanvas(initCanvas);
 
         const loadFrameImage = async () => {
             const frameImage = await new Promise((resolve) => {
-                fabric.Image.fromURL(
-                    language === 'vi' ? cardVI : cardEN
-                    , (img) => {
-                    img.scaleToWidth(CARD_FRAME_WIDTH);
-                    img.scaleToHeight(900);
+                fabric.Image.fromURL(language === 'vi' ? cardVI : cardEN, (img) => {
+                    img.scaleToWidth(cardFrameWidth);
+                    img.scaleToHeight(cardFrameHeight);
                     img.set({
                         selectable: false,
                         evented: false,
@@ -118,7 +121,7 @@ export const useInitCardCanvas = (canvasRef, setCanvas, language) => {
                     initCanvas.remove(obj);
                     obj.dispose();
                 });
-                initCanvas.dispose(); // Dispose of the Fabric.js canvas
+                initCanvas.dispose();
             }
         };
     }, [language]);

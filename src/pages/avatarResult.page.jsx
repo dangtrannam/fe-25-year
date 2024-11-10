@@ -12,21 +12,15 @@ const AvatarResultPage = ({ setNextPage }) => {
 
     useEffect(() => {
         const handleStorageChange = () => {
-            const newAvatarDataURL = localStorage.getItem("avatarImage");
-            setAvatarDataURL(newAvatarDataURL);
-
-            const newCardDataURL = localStorage.getItem("cardImage");
-            setCardDataURL(newCardDataURL);
+            setAvatarDataURL(localStorage.getItem("avatarImage"));
+            setCardDataURL(localStorage.getItem("cardImage"));
         };
 
         window.addEventListener("storage", handleStorageChange);
 
         const intervalId = setInterval(() => {
-            const currentAvatarDataURL = localStorage.getItem("avatarImage");
-            setAvatarDataURL(currentAvatarDataURL);
-
-            const currentCardDataURL = localStorage.getItem("cardImage");
-            setCardDataURL(currentCardDataURL);
+            setAvatarDataURL(localStorage.getItem("avatarImage"));
+            setCardDataURL(localStorage.getItem("cardImage"));
         }, 1000);
 
         return () => {
@@ -35,7 +29,6 @@ const AvatarResultPage = ({ setNextPage }) => {
         };
     }, []);
     
-
     const handleDownload = (dataUrl) => { 
         const file = dataUrlToFile(dataUrl, "fe-25years.png");
         const files = convertToFileList(file);
@@ -66,64 +59,73 @@ const AvatarResultPage = ({ setNextPage }) => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center gap-10 py-[5vh]">
-            <div className='flex flex-row items-center gap-40'>
+        <div className="flex flex-col items-center justify-center gap-8 md:gap-10 py-8 md:py-[5vh] px-4">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 w-full max-w-[80vw] md:max-w-[60vw]">
                 <div className="overflow-hidden flex items-center justify-center w-full">
                     {avatarDataURL &&
-                        <img src={avatarDataURL} alt="Avatar" className="w-[35vh]" />
+                        <img src={avatarDataURL} alt="Avatar" className="w-[50vw] md:w-[35vh]" />
                     }
                 </div>
+                <div className="flex md:hidden flex-col items-center w-full space-y-4">
+                    <button
+                        onClick={() => handleDownload(avatarDataURL)}
+                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        {text?.page5?.download}
+                    </button>
+                    <button
+                        onClick={() => handleShare(avatarDataURL)}
+                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        {text?.page5?.share}
+                    </button>
+                    <button
+                        onClick={() => setNextPage()}
+                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        {text?.page5?.createAnother}
+                    </button>
+                </div>
+
                 <div className="overflow-hidden flex items-center justify-center rounded-[23px] w-full">
                     {cardDataURL && 
-                        <img src={cardDataURL} alt="Card" className="w-[35vh]" />
+                        <img src={cardDataURL} alt="Card" className="w-[50vw] md:w-[35vh]" />
                     }
                 </div>
             </div>
             
-            <div className='flex flex-row items-center justify-center gap-40'>
-                <div className="flex flex-col items-center w-full">
-                    <div className="mt-2 w-full">
-                        <button onClick={() => handleDownload(avatarDataURL)} className="text-white w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
-                            {text?.page5?.download}
-                        </button>
-                    </div>
-                    <div className="mt-2 w-full">
-                        <button
-                            onClick={() => handleShare(avatarDataURL)}
-                            className="text-white w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
-                            {text?.page5?.share}
-                        </button>
-                    </div>
-                    <div className="mt-2 w-full">
-                        <button
-                            onClick={() => setNextPage()}
-                            className="text-white w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
-                            {text?.page5?.createAnother}
-                        </button>
-                    </div>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 w-full max-w-[80vw] md:max-w-[60vw]">
+                <div className="hidden md:flex flex-col items-center w-full space-y-4">
+                    <button
+                        onClick={() => handleDownload(avatarDataURL)}
+                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        {text?.page5?.download}
+                    </button>
+                    <button
+                        onClick={() => handleShare(avatarDataURL)}
+                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        {text?.page5?.share}
+                    </button>
+                    <button
+                        onClick={() => setNextPage()}
+                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        {text?.page5?.createAnother}
+                    </button>
                 </div>
 
-                <div className="text-center space-y-4 w-full">
-                    <div className="mt-2 w-full">
-                        <button onClick={() => handleDownload(cardDataURL)}
-                            className="text-white w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
-                            {text?.page5?.download}
-                        </button>
-                    </div>
-                    <div className="mt-2 w-full">
-                        <button
-                            onClick={() => handleShare(cardDataURL)}
-                            className="text-white w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
-                            {text?.page5?.share}
-                        </button>
-                    </div>
-                    <div className="mt-2 w-full">
-                        <button
-                            onClick={() => setNextPage()}
-                            className="text-white w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
-                            {text?.page5?.createAnother}
-                        </button>
-                    </div>
+                <div className="flex flex-col items-center w-full space-y-4">
+                    <button
+                        onClick={() => handleDownload(cardDataURL)}
+                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        {text?.page5?.download}
+                    </button>
+                    <button
+                        onClick={() => handleShare(cardDataURL)}
+                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        {text?.page5?.share}
+                    </button>
+                    <button
+                        onClick={() => setNextPage()}
+                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        {text?.page5?.createAnother}
+                    </button>
                 </div>
             </div>
         </div>
