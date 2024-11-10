@@ -1,0 +1,24 @@
+{
+    "page1": {
+      "start": "Start"
+    },
+    "page2": {
+      "welcome": "WELCOME TO",
+      "journey": "THE 25-YEAR JOURNEY"
+    },
+    "page3": {
+      "skip": "Skip"
+    },
+    "page4": {
+      "upload": "Upload Image",
+      "namePlaceholder": "Your Name",
+      "datePlaceholder": "Joining Date",
+      "finish": "Finish"
+    },
+    "page5": {
+      "download": "DOWNLOAD",
+      "share": "SHARE NOW",
+      "createAnother": "CREATE ANOTHER"
+    }
+  }
+  
