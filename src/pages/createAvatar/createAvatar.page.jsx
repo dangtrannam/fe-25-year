@@ -80,14 +80,13 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 left: cardCanvas.width / 1.5,
                 top: cardCanvas.height / 1.76,
                 fontSize: 16 * PIXEL_RATIO,
-                fontFamily: 'Inter',
+                fontFamily: 'SVN Gilroy Italic',
                 fill: '#ffffff',
                 textAlign: 'left',
                 originX: 'center',
                 originY: 'center',
                 lineHeight: 1,
                 fontWeight: 'bold',
-                fontStyle: 'italic',
                 name: 'nameText',
                 width: cardCanvas.width / 1.5,
                 selectable: false,
@@ -112,7 +111,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 left: cardCanvas.width / 1.85,
                 top: cardCanvas.height / 1.40,
                 fontSize: fontSizeHoursText, // Responsive font size
-                fontFamily: 'Inter',
+                fontFamily: 'SVN Gilroy Italic',
                 fill: '#ffffff',
                 textAlign: 'center',
                 originX: 'center',
@@ -224,7 +223,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                     </div>
                             <button
                                 onClick={handleFinish}
-                                className="hidden xl:flex mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px]"
+                                className="justify-center hidden xl:flex mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px]"
                             >
                                 {text?.page4?.finish}
                             </button>
@@ -240,7 +239,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
             </div>
                     <button
                         onClick={handleFinish}
-                        className="flex xl:hidden mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px] md:max-w-[584px] mb-5"
+                        className="justify-center flex xl:hidden mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px] md:max-w-[584px] mb-5"
                     >
                         {text?.page4?.finish}
                     </button>
