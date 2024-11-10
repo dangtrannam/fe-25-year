@@ -1,4 +1,6 @@
-export const usePinPanImage = (canvas, userImageSrc) => {
+import { useEffect, useRef } from 'react';
+import { isMobile } from '../../../utils';
+export const usePinPanImage = (canvas, userImageRef, hammerRef, dependencies) => {
     useEffect(() => {
         if (!hammerRef.current && canvas && isMobile()) {
             const canvasElement = canvas.upperCanvasEl;
@@ -56,5 +58,5 @@ export const usePinPanImage = (canvas, userImageSrc) => {
                 hammerRef.current = null;
             }
         };
-    }, [canvas, userImageSrc]);
+    }, [...dependencies]);
 }

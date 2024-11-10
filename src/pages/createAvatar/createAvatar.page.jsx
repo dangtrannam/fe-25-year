@@ -1,15 +1,17 @@
 import React, { useState, useRef } from 'react';
-import { useUploadImage, useInitCanvas } from './hooks';
+import { useUploadImage, useInitCanvas, usePinPanImage } from './hooks';
 
 const CreateAvatarPage = ({ setNextPage }) => {
     const [userImageSrc, setUserImageSrc] = useState(null);
-    const userImageRef = useRef(null);
     const [avatarCanvas, setAvatarCanvas] = useState(null);
+    const userImageRef = useRef(null);
+    const hammerRef = useRef(null);
 
     const avatarCanvasRef = useRef(null);
 
     useInitCanvas(avatarCanvasRef, setAvatarCanvas);
     useUploadImage(avatarCanvas, userImageRef, userImageSrc, [userImageSrc, avatarCanvasRef]);
+    usePinPanImage(avatarCanvas, userImageRef, hammerRef, [userImageSrc, avatarCanvas]);
 
     const handleImageUpload = (event) => {
         console.log("handleImageUpload");
