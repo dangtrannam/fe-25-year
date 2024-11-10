@@ -2,7 +2,7 @@
 import HeaderComponent from "../../components/header.component";
 import VideoPlayer from "./videoPlayer";
 
-const ClipIntroductionPage = ({ setNextPage }) => {
+const ClipIntroductionPage = ({ currentPage, setNextPage }) => {
     const videoJsOptions = {
         controls: false,
         responsive: true,
@@ -11,7 +11,7 @@ const ClipIntroductionPage = ({ setNextPage }) => {
         muted: true,
         playsinline: true,
         sources: [{
-            src: '/video/video-example.mp4',
+            src: '/video/video_final.mp4',
             type: 'video/mp4'
         }]
     };
