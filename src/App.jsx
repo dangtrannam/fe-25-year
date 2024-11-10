@@ -9,6 +9,7 @@ import BackgroundVideo from './components/background.component';
 import IntroductionPage from './pages/introduction/introduction.page';
 import ClipIntroductionPage from "./pages/clip/clip.page.jsx";
 import { LanguageProvider } from './components/LanguageContext.jsx';
+import { videoBackground } from './pages/clip/video.constant.jsx';
 
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,7 +22,7 @@ function App() {
   return (
     <LanguageProvider>
       <div className="relative overflow-hidden w-screen min-h-screen">
-        <BackgroundVideo src="/video/background.mp4" />
+        <BackgroundVideo src={videoBackground} />
         <div className={getClassName(1)}>
           <StartPage setNextPage={() => setCurrentPage(2)} />
         </div>
@@ -32,7 +33,7 @@ function App() {
           }} />
         </div>
         <div className={getClassName(3)}>
-          <ClipIntroductionPage currentPage={currentPage} setNextPage={() => setCurrentPage(4)} play={playVideo} setPlayVideo={setPlayVideo}/>
+          <ClipIntroductionPage currentPage={currentPage} setNextPage={() => setCurrentPage(4)} play={playVideo} setPlayVideo={setPlayVideo} />
         </div>
         <div className={`${getClassName(4)} overflow-y-scroll md:overflow-y-hidden`}>
           <CreateAvatarPage setNextPage={() => setCurrentPage(5)} />
