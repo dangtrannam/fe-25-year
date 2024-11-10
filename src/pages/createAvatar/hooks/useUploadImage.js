@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { isMobile } from "../../../utils";
+import { fabric } from 'fabric';
 const FRAME_SIZE = 584; // 17.5rem
 const USER_WIDTH = 584; // 17.5rem
 

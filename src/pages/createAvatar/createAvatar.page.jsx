@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import LanguageContext from '../../components/LanguageContext';
 import { isMobile } from '../../utils';
 import { useCardUploadImage, useInitCanvas, useInitCardCanvas, usePinPanImage, useUploadImage } from './hooks';
+import { fabric } from 'fabric';
 
 const CreateAvatarPage = ({ setNextPage }) => {
     const { text, language } = useContext(LanguageContext);

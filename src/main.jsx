@@ -9,31 +9,31 @@ import IntroductionPage from "./pages/introduction/introduction.page.jsx";
 import ClipIntroductionPage from "./pages/clip/clip.page.jsx";
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/fptedu25",
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: "/fptedu25",
         element: <App />,
       },
       {
-        path: "/start",
+        path: "/fptedu25/start",
         element: <StartPage />,
       },
       {
-        path: "/introduction",
+        path: "/fptedu25/introduction",
         element: <IntroductionPage />
       },
       {
-        path: "/clip-introduction",
+        path: "/fptedu25/clip-introduction",
         element: <ClipIntroductionPage />
       },
       {
-        path: "/create-avatar",
+        path: "/fptedu25/create-avatar",
         element: <CreateAvatarPage />
       },
       {
-        path: "/avatar-result",
+        path: "/fptedu25/avatar-result",
         element: <AvatarResultPage />
       },
     ],
