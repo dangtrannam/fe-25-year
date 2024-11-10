@@ -1,12 +1,11 @@
-import React from 'react'
 import HeaderComponent from '../../components/header.component';
 import CircularProgress from './counter';
 
 const IntroductionPage = ({ currentPage, setNextPage }) => {
     return (
-        <div>
+        <div className='flex flex-col h-screen'>
             <HeaderComponent />
-            <div className="flex flex-col items-center justify-center mt-6 px-4">
+            <div className="flex flex-1 flex-col justify-center xl:justify-start items-center mt-6 px-4">
                 <div className="flex flex-col gap-4 md:gap-6 items-center text-center">
                     <div className="flex flex-col gap-2 items-center text-center font-unbounded text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold">
                         <span>CHÀO MỪNG ĐẾN VỚI</span>

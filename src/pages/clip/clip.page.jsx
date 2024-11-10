@@ -18,22 +18,22 @@ const ClipIntroductionPage = ({ currentPage, setNextPage }) => {
 
     return (
         <div className="h-screen">
-            <HeaderComponent />
-            <div className="flex items-center justify-center h-[calc(90vh-6rem)] relative">
-                <div className="w-full aspect-video">
-                    <VideoPlayer
-                        options={videoJsOptions}
-                        onEnded={setNextPage}
-                    />
-                </div>
-                <button
-                    onClick={setNextPage}
-                    className="absolute bottom-4 right-4 bg-orange-500 hover:bg-black/75 text-white px-4 py-2 rounded-md transition-colors font-bold"
-                >
-                    Skip
-                </button>
+        <HeaderComponent />
+        <div className="flex items-center justify-center h-[calc(90vh-6rem)] relative">
+            <div className="w-full aspect-video">
+                <VideoPlayer
+                    options={videoJsOptions}
+                    onEnded={setNextPage}
+                />
             </div>
+            <button
+                onClick={setNextPage}
+                className="absolute bottom-4 right-4 bg-orange-500 hover:bg-black/75 text-white px-4 py-2 rounded-md transition-colors font-bold sm:px-3 sm:py-1 sm:text-sm"
+            >
+                Skip
+            </button>
         </div>
+    </div>
     );
 };
 

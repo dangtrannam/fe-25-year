@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
-import './style.css'; // Import the CSS file
 import { gsap } from 'gsap';
 import { TimelineMax } from 'gsap/gsap-core';
+import { useEffect, useRef } from 'react';
+import './style.css'; // Import the CSS file
 
 // eslint-disable-next-line react/prop-types
 const CircularProgress = ({ currentPage, setNextPage }) => {
-    const [progress, setProgress] = useState(0);
     const intervalRef = useRef(null);
     const yearRef = useRef(1999);
     const targetYear = 2024;
@@ -13,12 +12,9 @@ const CircularProgress = ({ currentPage, setNextPage }) => {
 
     const runAnimation = () => {
         let i = 0;
-        let testProgress = 0;
 
         let timeline = gsap.timeline({
             onRepeat: () => {
-                testProgress += 7;
-                setProgress(testProgress)
             },
             repeat: -1,
             duration: 0.2,
@@ -73,7 +69,8 @@ const CircularProgress = ({ currentPage, setNextPage }) => {
         <div className="flex flex-col gap-4 justify-center items-center">
             <div className="relative justify-center items-center my-auto top-16">
                 <div className="flex items-center">
-                    <div className="flex flex-col year gap-[128px]">
+                    <div className="flex flex-col year gap-[128px] w-[1000px]">
+                        <span></span>
                         {years.map((year) => (
                             <div
                                 key={year}

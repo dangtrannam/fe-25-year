@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import {useUploadImage, useInitCanvas} from './hooks';
+import { useUploadImage, useInitCanvas } from './hooks';
 
 const CreateAvatarPage = ({ setNextPage }) => {
     const [userImageSrc, setUserImageSrc] = useState(null);
@@ -34,7 +34,6 @@ const CreateAvatarPage = ({ setNextPage }) => {
                     <canvas ref={avatarCanvasRef} className={``} id='avatarCanvas' />
                 </div>
                 <div className="mt-4 text-center">
-                    {/* File input for image upload with custom styling */}
                     <div className="flex justify-center items-center mt-2 text-white border-b border-white w-full px-2">
                         <label className="flex items-center w-full cursor-pointer justify-between text-[24px]">
                             <span className="mr-2">Upload ảnh</span>
@@ -49,12 +48,10 @@ const CreateAvatarPage = ({ setNextPage }) => {
                                     handleImageUpload(event);
                                 }}
                                 accept="image/*"
-                                className="hidden" // Hide the default file input
+                                className="hidden"
                             />
                         </label>
                     </div>
-
-                    {/* Additional input fields with icons and borders */}
                     <div className="flex justify-center items-center mt-2 text-white border-b border-white w-full px-2">
                         <input
                             type="text"
@@ -79,7 +76,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 </div>
             </div>
 
-            {/* <div className="w-80 p-6 bg-white bg-opacity-10 rounded-xl shadow-lg flex flex-col items-center ml-8">
+            {/* <div className="md:w-80 p-6 bg-white bg-opacity-10 rounded-xl shadow-lg flex flex-col items-center md:ml-8">
                 <div className="w-48 h-48 rounded-full bg-gray-200 overflow-hidden">
                     {userImageSrc ? (
                         <img src={userImageSrc} alt="User Image" className="w-full h-full object-cover" />
