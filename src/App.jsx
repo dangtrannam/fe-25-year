@@ -27,7 +27,7 @@ function App() {
         <IntroductionPage currentPage={currentPage} setNextPage={() => setCurrentPage(3)} />
       </div>
       <div className={getClassName(3)}>
-        <ClipIntroductionPage setNextPage={() => setCurrentPage(4)} />
+        <ClipIntroductionPage currentPage={currentPage} setNextPage={() => setCurrentPage(4)} />
       </div>
       <div className={getClassName(4)}>
         <CreateAvatarPage setNextPage={() => setCurrentPage(5)} />
