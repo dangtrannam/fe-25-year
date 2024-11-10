@@ -4,6 +4,7 @@ import { isMobile } from '../../utils';
 import { useCardUploadImage, useInitCanvas, useInitCardCanvas, usePinPanImage, useUploadImage } from './hooks';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { fabric } from 'fabric';
 
 const CreateAvatarPage = ({ setNextPage }) => {
     const { text, language } = useContext(LanguageContext);
@@ -71,7 +72,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
             if (existingText.length > 0) existingText.forEach(obj => cardCanvas.remove(obj));
 
             const nameText = new fabric.Textbox(name, {
-                left: cardCanvas.width / 1.70,
+                left: cardCanvas.width / 1.5,
                 top: cardCanvas.height / 1.76,
                 fontSize: 16 * PIXEL_RATIO,
                 fontFamily: 'Inter',
