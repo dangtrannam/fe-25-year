@@ -27,13 +27,13 @@ const HeaderComponent = () => {
               className="w-16 sm:w-20 md:w-28 lg:w-32 h-auto"
             />
           </Link>
-          <Link to="#" target="_blank">
+          {/* <Link to="#" target="_blank">
             <img
               src="/images/logo_25year.png"
               alt="25 Years Logo"
               className="w-16 sm:w-20 md:w-24 lg:w-28 h-auto"
             />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </header>
