@@ -1,24 +1,23 @@
 {
-    "page1": {
-      "start": "Bắt đầu"
-    },
-    "page2": {
-      "welcome": "CHÀO MỪNG ĐẾN VỚI",
-      "journey": "HÀNH TRÌNH 25 NĂM"
-    },
-    "page3": {
-      "skip": "Bỏ qua"
-    },
-    "page4": {
-      "upload": "Upload ảnh",
-      "namePlaceholder": "Tên của bạn",
-      "datePlaceholder": "Ngày gia nhập",
-      "finish": "Hoàn thành"
-    },
-    "page5": {
-      "download": "TẢI VỀ",
-      "share": "KHOE NGAY",
-      "createAnother": "TẠO ẢNH KHÁC"
-    }
+  "page1": {
+    "start": "Bắt đầu"
+  },
+  "page2": {
+    "welcome": "CHÀO MỪNG ĐẾN VỚI",
+    "journey": "HÀNH TRÌNH 25 NĂM"
+  },
+  "page3": {
+    "skip": "Bỏ qua"
+  },
+  "page4": {
+    "upload": "Upload ảnh",
+    "namePlaceholder": "Tên của bạn",
+    "datePlaceholder": "Ngày gia nhập",
+    "finish": "Hoàn thành"
+  },
+  "page5": {
+    "download": "TẢI VỀ",
+    "share": "KHOE NGAY",
+    "createAnother": "TẠO ẢNH KHÁC"
   }
-  
+}
