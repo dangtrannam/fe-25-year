@@ -70,63 +70,62 @@ const AvatarResultPage = ({ setNextPage }) => {
     }
 
     return (
-        <div className="flex container items-start h-screen mx-auto justify-center space-x-40 mt-[10vh]">
-            <div className=''></div>
-            {/* Avatar Section */}
-            <div className="p-9 flex flex-col items-center w-auto">
-                <div className="overflow-hidden flex items-center justify-center rounded-[23px] w-full">
+        <div className="flex flex-col items-center justify-center gap-10 py-[5vh]">
+            <div className='flex flex-row items-center gap-40'>
+                <div className="overflow-hidden flex items-center justify-center w-full">
                     {avatarDataURL &&
-                        <img src={avatarDataURL} alt="Avatar" className="w-[40vh]" />
+                        <img src={avatarDataURL} alt="Avatar" className="w-[35vh]" />
                     }
                 </div>
-                <div className="mt-4 text-center space-y-4 w-full">
-                    <div className="flex justify-center mt-2">
-                        <button onClick={() => handleDownload(avatarDataURL)} className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
+                <div className="overflow-hidden flex items-center justify-center rounded-[23px] w-full">
+                    {cardDataURL && 
+                        <img src={cardDataURL} alt="Card" className="w-[35vh]" />
+                    }
+                </div>
+            </div>
+            
+            {/* Buttons */}
+            <div className='flex flex-row items-center justify-center gap-40'>
+                <div className="flex flex-col items-center w-full">
+                    <div className="mt-2 w-full">
+                        <button onClick={() => handleDownload(avatarDataURL)} className="text-white w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
                             TẢI VỀ
                         </button>
                     </div>
-                    <div className="flex justify-center mt-2">
+                    <div className="mt-2 w-full">
                         <button
                             onClick={() => handleShare(avatarDataURL)}
-                            className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
+                            className="text-white w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
                             KHOE NGAY
                         </button>
                     </div>
-                    <div className="flex justify-center mt-2">
+                    <div className="mt-2 w-full">
                         <button
                             onClick={() => setNextPage()}
-                            className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
+                            className="text-white w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
                             TẠO ẢNH KHÁC
                         </button>
                     </div>
                 </div>
-            </div>
 
-            {/* E-Card Section */}
-            <div className="p-6 flex flex-col items-center w-[40vh]">
-                <div className="overflow-hidden flex items-center justify-center rounded-[23px] w-full">
-                    {cardDataURL && 
-                        <img src={cardDataURL} alt="Card" />
-                    }
-                </div>
-                <div className="mt-4 text-center space-y-4 w-full">
-                    <div className="flex justify-center mt-2">
+                <div className="text-center space-y-4 w-full">
+                    <div className="mt-2 w-full">
                         <button onClick={() => handleDownload(cardDataURL)}
-                            className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
+                            className="text-white w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
                             TẢI VỀ
                         </button>
                     </div>
-                    <div className="flex justify-center mt-2">
+                    <div className="mt-2 w-full">
                         <button
                             onClick={() => handleShare(cardDataURL)}
-                            className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
+                            className="text-white w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
                             KHOE NGAY
                         </button>
                     </div>
-                    <div className="flex justify-center mt-2">
+                    <div className="mt-2 w-full">
                         <button
                             onClick={() => setNextPage()}
-                            className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
+                            className="text-white w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
                             TẠO ẢNH KHÁC
                         </button>
                     </div>
