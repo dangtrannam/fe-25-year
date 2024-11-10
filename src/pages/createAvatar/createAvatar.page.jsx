@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { useUploadImage, useInitCanvas, usePinPanImage } from './hooks';
+import { useUploadImage, useCardUploadImage, useInitCanvas, useInitCardCanvas , usePinPanImage } from './hooks';
 import { isMobile, dataUrlToFile, convertToFileList, shareImage, isShareable } from '../../utils';
 
 const CreateAvatarPage = ({ setNextPage }) => {
@@ -13,6 +13,14 @@ const CreateAvatarPage = ({ setNextPage }) => {
     useInitCanvas(avatarCanvasRef, setAvatarCanvas);
     useUploadImage(avatarCanvas, userImageRef, userImageSrc, [userImageSrc, avatarCanvasRef]);
     usePinPanImage(avatarCanvas, userImageRef, hammerRef, [userImageSrc, avatarCanvas]);
+    
+    const cardCanvasRef = useRef(null);
+    const [cardCanvas, setCardCanvas] = useState(null);
+    const cardUserImageRef = useRef(null);
+    const cardHammerRef = useRef(null);
+    useInitCardCanvas(cardCanvasRef, setCardCanvas);
+    useCardUploadImage(cardCanvas, cardUserImageRef, userImageSrc, [userImageSrc, cardCanvasRef]);
+    usePinPanImage(cardCanvas, cardUserImageRef, cardHammerRef, [userImageSrc, cardCanvas]);
 
     const handleImageUpload = (event) => {
         console.log("handleImageUpload");
@@ -105,16 +113,13 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 </div>
             </div>
 
-            {/* <div className="md:w-80 p-6 bg-white bg-opacity-10 rounded-xl shadow-lg flex flex-col items-center md:ml-8">
-                <div className="w-48 h-48 rounded-full bg-gray-200 overflow-hidden">
-                    {userImageSrc ? (
-                        <img src={userImageSrc} alt="User Image" className="w-full h-full object-cover" />
-                    ) : (
-                        <span className="text-gray-500">No Image</span>
-                    )}
+            <div className="flex flex-col items-center">
+                <div className="p-6 flex flex-col items-center w-[509px]">
+                    <div className="overflow-hidden flex items-center justify-center rounded-[23px]">
+                        <canvas ref={cardCanvasRef} className={``} id='cardCanvasRef' />
+                    </div>
                 </div>
-          
-            </div> */}
+            </div>
             
         </div>
     );
