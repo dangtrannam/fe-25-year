@@ -97,7 +97,8 @@ const CreateAvatarPage = ({ setNextPage }) => {
             const now = new Date();
             const diffInMs = now - selectedDate;
             const hours = Math.floor(diffInMs / (1000 * 60 * 60));
-            const fullText = `${hours} hours`;
+            const fullText = `${hours} ${language === 'en' ? 'hours' : 'giờ'}
+            `;
     
             const hoursText = new fabric.Textbox(fullText, {
                 left: cardCanvas.width / 2,
@@ -123,6 +124,20 @@ const CreateAvatarPage = ({ setNextPage }) => {
                     offsetY: -5
                 }
             });
+
+            const boldStartIndex = fullText.indexOf(
+                language === 'en' ? 'hours' : 'giờ'
+            );
+            const boldEndIndex = boldStartIndex + (
+                language === 'en' ? 'hours' : 'giờ'
+            ).length;
+            hoursText.setSelectionStyles(
+                {
+                    fontStyle: 'italic',
+                },
+                boldStartIndex,
+                boldEndIndex
+            );
     
             cardCanvas.add(hoursText);
             cardCanvas.bringToFront(hoursText);
