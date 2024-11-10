@@ -16,12 +16,12 @@ const AvatarResultPage = ({ setNextPage }) => {
                 </div>
                 <div className="mt-4 text-center space-y-4 w-full">
                     <div className="flex justify-center mt-2">
-                        <button className="w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
+                        <button className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
                             Lưu về máy
                         </button>
                     </div>
                     <div className="flex justify-center mt-2">
-                        <button className="w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
+                        <button className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
                             Tạo ảnh khác
                         </button>
                     </div>
@@ -35,12 +35,12 @@ const AvatarResultPage = ({ setNextPage }) => {
                 </div>
                 <div className="mt-4 text-center space-y-4 w-full">
                     <div className="flex justify-center mt-2">
-                        <button className="w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
+                        <button className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
                             Lưu về máy
                         </button>
                     </div>
                     <div className="flex justify-center mt-2">
-                        <button className="w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
+                        <button className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
                             Tạo ảnh khác
                         </button>
                     </div>
