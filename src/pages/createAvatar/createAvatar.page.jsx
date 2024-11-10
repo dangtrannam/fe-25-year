@@ -225,7 +225,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                     </div>
                     <button
                         onClick={handleFinish}
-                        className="justify-center hidden xl:flex mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px]"
+                        className="font-unbounded justify-center hidden xl:flex mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px]"
                     >
                         {text?.page4?.finish}
                     </button>
@@ -241,7 +241,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
             </div>
             <button
                 onClick={handleFinish}
-                className="justify-center flex xl:hidden mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px] md:max-w-[584px] mb-5"
+                className="font-unbounded justify-center flex xl:hidden mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px] md:max-w-[584px] mb-5"
             >
                 {text?.page4?.finish}
             </button>
