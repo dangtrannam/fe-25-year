@@ -1,12 +1,12 @@
-import { useEffect } from "react";
 import { fabric } from 'fabric';
-import { isMobile } from "../../../utils";
+import { useEffect } from "react";
 const FRAME_SIZE = 17.5 * 16; // 17.5rem
 const USER_WIDTH = 17.5 * 16; // 17.5rem
 
-const frame = "/images/frame-avatar-25.png"
+const frameEng = "/images/avatar/ENG-FRAMEAVA.png"
+const frameVi = "/images/avatar/VIET-FRAMEAVA.png"
 
-export const useInitCanvas = (canvasRef, setCanvas) => {
+export const useInitCanvas = (canvasRef, setCanvas, language) => {
     useEffect(() => {
         const initCanvas = new fabric.Canvas(canvasRef.current, {
             width: FRAME_SIZE,
@@ -29,7 +29,8 @@ export const useInitCanvas = (canvasRef, setCanvas) => {
 
         const loadFrameImage = async () => {
             const frameImage = await new Promise((resolve) => {
-                fabric.Image.fromURL(frame, (img) => {
+                fabric.Image.fromURL(
+                    language === 'vi' ? frameVi : frameEng, (img) => {
                     img.scaleToWidth(FRAME_SIZE);
                     img.scaleToHeight(FRAME_SIZE);
                     img.set({
@@ -58,14 +59,15 @@ export const useInitCanvas = (canvasRef, setCanvas) => {
                 initCanvas.dispose(); // Dispose of the Fabric.js canvas
             }
         };
-    }, []);
+    }, [language]);
 };
 
 const CARD_FRAME_WIDTH = 500;
 const ratio = 500 / 900;
 const CARD_FRAME_HEIGHT = 900 * ratio;
-const card = "/images/card/ecardviet.png";
-export const useInitCardCanvas = (canvasRef, setCanvas) => {
+const cardVI = "/images/card/ecardviet.png";
+const cardEN = "/images/card/ecardeng.png";
+export const useInitCardCanvas = (canvasRef, setCanvas, language) => {
     useEffect(() => {
         const initCanvas = new fabric.Canvas(canvasRef.current, {
             width: CARD_FRAME_WIDTH,
@@ -88,7 +90,9 @@ export const useInitCardCanvas = (canvasRef, setCanvas) => {
 
         const loadFrameImage = async () => {
             const frameImage = await new Promise((resolve) => {
-                fabric.Image.fromURL(card, (img) => {
+                fabric.Image.fromURL(
+                    language === 'vi' ? cardVI : cardEN
+                    , (img) => {
                     img.scaleToWidth(CARD_FRAME_WIDTH);
                     img.scaleToHeight(900);
                     img.set({
@@ -117,5 +121,5 @@ export const useInitCardCanvas = (canvasRef, setCanvas) => {
                 initCanvas.dispose(); // Dispose of the Fabric.js canvas
             }
         };
-    }, []);
+    }, [language]);
 };
