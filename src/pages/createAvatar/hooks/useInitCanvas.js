@@ -11,9 +11,19 @@ export const useInitCanvas = (canvasRef, setCanvas) => {
         const initCanvas = new fabric.Canvas(canvasRef.current, {
             width: FRAME_SIZE,
             height: FRAME_SIZE,
-            // centeredScaling: true,
             preserveObjectStacking: true,
         });
+
+        // Add border radius
+        const clipPath = new fabric.Rect({
+            width: FRAME_SIZE,
+            height: FRAME_SIZE,
+            rx: 24,
+            ry: 24,
+            absolutePositioned: true,
+        });
+
+        initCanvas.clipPath = clipPath;
 
         setCanvas(initCanvas);
 
