@@ -26,7 +26,11 @@ const VideoPlayer = ({ options, onEnded }) => {
     // Add event listeners
     player.ready(() => {
       console.log('Player is ready');
-      player.play().catch(error => {
+      player.play()
+      .then(() => {
+        console.log('Autoplay started');
+      })
+      .catch(error => {
         console.error('Autoplay failed:', error);
       });
     });
