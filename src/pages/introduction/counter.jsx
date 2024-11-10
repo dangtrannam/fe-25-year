@@ -74,7 +74,7 @@ const CircularProgress = ({ currentPage, setNextPage }) => {
                         {years.map((year) => (
                             <div
                                 key={year}
-                                className='text-[24px] text-transparent bg-clip-text bg-gradient-to-r from-[#5950C5] to-[#DF885B] font-extrabold text-center items-center justify-center flex text-stroke-white'>
+                                className='text-[24px] antialiased text-transparent bg-clip-text bg-gradient-to-r from-[#5950C5] to-[#DF885B] font-extrabold text-center items-center justify-center flex text-stroke-white'>
                                 {year}
                             </div>
                         ))}

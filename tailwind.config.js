@@ -10,7 +10,7 @@ export default {
         unbounded: ['"Unbounded"', 'sans-serif'],
       },
       textStroke: {
-        white: '4px white',
+        white: '6px white',
       },
     },
   },
@@ -18,9 +18,10 @@ export default {
     function ({ addUtilities }) {
       addUtilities({
         '.text-stroke-white': {
-          WebkitTextStroke: '0.4px white',
-          textStroke: '0.4px white',
+          WebkitTextStroke: '0.3px white',
+          textStroke: '0.3px white',
           WebkitTextFillColor: 'transparent',
+          mixBlendMode: 'multiply'
         },
       });
     },
