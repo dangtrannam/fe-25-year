@@ -9,7 +9,7 @@ const HeaderComponent = () => {
                     Chọn ngôn ngữ
                 </span>
                 <button className="hover:bg-white/10 px-2 py-1 rounded transition-colors">
-                    Vn/Eng
+                    VN/ENG
                 </button>
             </div>
 
