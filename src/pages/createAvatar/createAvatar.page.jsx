@@ -22,7 +22,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
     };
 
     console.log("userImageSrc", userImageSrc);
-    
+
 
     return (
         <div className="flex justify-center items-center h-screen">
@@ -46,7 +46,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                                 type="file"
                                 onChange={(event) => {
                                     console.log("onChange");
-                                    
+
                                     handleImageUpload(event);
                                 }}
                                 accept="image/*"
@@ -86,13 +86,14 @@ const CreateAvatarPage = ({ setNextPage }) => {
                         <span className="text-gray-500">No Image</span>
                     )}
                 </div>
-                <button
-                    onClick={setNextPage}
-                    className="mt-6 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full"
-                >
-                    Pick Your Ecard
-                </button>
+          
             </div> */}
+            <button
+                onClick={setNextPage}
+                className="mt-6 px-4 py-2 bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full"
+            >
+                Pick Your Ecard
+            </button>
         </div>
     );
 };
