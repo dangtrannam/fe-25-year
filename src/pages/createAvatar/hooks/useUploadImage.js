@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { isMobile } from "../../../utils";
-const FRAME_SIZE = 17.5 * 16; // 17.5rem
-const USER_WIDTH = 17.5 * 16; // 17.5rem
+const FRAME_SIZE = 584; // 17.5rem
+const USER_WIDTH = 584; // 17.5rem
 
-export const useUploadImage = (canvasRef, userImageRef, dependencies) => {
+export const useUploadImage = (canvasRef, userImageRef, userImageSrc, dependencies) => {
     useEffect(() => {
         if (!canvasRef) return;
 
