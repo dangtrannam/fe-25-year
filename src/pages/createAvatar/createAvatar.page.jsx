@@ -127,7 +127,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                     offsetY: -5
                 }
             });
-
+            // Highlight the word "hours" or "giờ" in the text
             const boldStartIndex = fullText.indexOf(
                 language === 'en' ? 'hours' : 'giờ'
             );
