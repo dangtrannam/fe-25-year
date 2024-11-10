@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { isMobile } from '../../../utils';
+import Hammer from 'hammerjs';
+
 export const usePinPanImage = (canvas, userImageRef, hammerRef, dependencies) => {
     useEffect(() => {
         if (!hammerRef.current && canvas && isMobile()) {
