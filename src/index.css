@@ -3,9 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
     font-family: 'Unbounded', sans-serif;
-}
+} */
 
 @font-face {
     font-family: 'SVN Gilroy';

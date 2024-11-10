@@ -8,12 +8,12 @@ const HeaderComponent = () => {
   return (
     <header className="p-4 relative">
       <div className="absolute left-4 top-4 text-white font-semibold flex flex-col items-start">
-        <span className="text-sm sm:text-base">
+        <span className="text-sm sm:text-base font-unbounded">
           {language === 'en' ? 'Select Language' : 'Chọn Ngôn Ngữ'}
         </span>
         <button
           onClick={toggleLanguage}
-          className="hover:bg-white/10 px-2 py-1 rounded transition-colors"
+          className="hover:bg-white/10 px-2 py-1 rounded transition-colors font-unbounded text-sm sm:text-base"
         >
           {language.toUpperCase()}
         </button>
