@@ -28,8 +28,8 @@ const AvatarResultPage = ({ setNextPage }) => {
             clearInterval(intervalId);
         };
     }, []);
-    
-    const handleDownload = (dataUrl) => { 
+
+    const handleDownload = (dataUrl) => {
         const file = dataUrlToFile(dataUrl, "fe-25years.png");
         const files = convertToFileList(file);
 
@@ -69,43 +69,43 @@ const AvatarResultPage = ({ setNextPage }) => {
                 <div className="flex xl:hidden flex-col items-center w-full space-y-4">
                     <button
                         onClick={() => handleDownload(avatarDataURL)}
-                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4 font-unbounded">
                         {text?.page5?.download}
                     </button>
                     <button
                         onClick={() => handleShare(avatarDataURL)}
-                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white font-unbounded rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.share}
                     </button>
                     <button
                         onClick={() => setNextPage()}
-                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white w-full font-unbounded md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.createAnother}
                     </button>
                 </div>
 
                 <div className="overflow-hidden flex items-center justify-center rounded-[23px] w-full">
-                    {cardDataURL && 
+                    {cardDataURL &&
                         <img src={cardDataURL} alt="Card" className="w-[50vw] md:w-[35vh]" />
                     }
                 </div>
             </div>
-            
+
             <div className="flex flex-col xl:flex-row items-center justify-center gap-6 md:gap-10 w-full max-w-[80vw] md:max-w-[60vw]">
                 <div className="hidden xl:flex flex-col items-center w-full space-y-4">
                     <button
                         onClick={() => handleDownload(avatarDataURL)}
-                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white font-unbounded w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.download}
                     </button>
                     <button
                         onClick={() => handleShare(avatarDataURL)}
-                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white font-unbounded w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.share}
                     </button>
                     <button
                         onClick={() => setNextPage()}
-                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white font-unbounded w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.createAnother}
                     </button>
                 </div>
@@ -113,17 +113,17 @@ const AvatarResultPage = ({ setNextPage }) => {
                 <div className="flex flex-col items-center w-full space-y-4">
                     <button
                         onClick={() => handleDownload(cardDataURL)}
-                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white font-unbounded w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.download}
                     </button>
                     <button
                         onClick={() => handleShare(cardDataURL)}
-                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white font-unbounded w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.share}
                     </button>
                     <button
                         onClick={() => setNextPage()}
-                        className="text-white w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white font-unbounded w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.createAnother}
                     </button>
                 </div>

@@ -32,7 +32,7 @@ const StartPage = ({ setNextPage }) => {
           )}
         </div>
         <button
-          className="text-white font-bold py-2 px-12 sm:py-3 sm:px-16 md:py-4 md:px-32 text-lg sm:text-xl md:text-2xl flex items-center justify-center bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-[4px] sm:border-[5px] border-white/[0.66] rounded-[20px] sm:rounded-[30px] md:rounded-[39px] mt-6"
+          className="text-white font-unbounded font-bold py-2 px-12 sm:py-3 sm:px-16 md:py-4 md:px-32 text-lg sm:text-xl md:text-2xl flex items-center justify-center bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-[4px] sm:border-[5px] border-white/[0.66] rounded-[20px] sm:rounded-[30px] md:rounded-[39px] mt-6"
           onClick={() => setNextPage()}
         >
           {text?.page1?.start}

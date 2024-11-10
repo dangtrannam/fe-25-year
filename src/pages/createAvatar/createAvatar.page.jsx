@@ -80,13 +80,14 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 left: cardCanvas.width / 1.5,
                 top: cardCanvas.height / 1.76,
                 fontSize: 16 * PIXEL_RATIO,
-                fontFamily: 'SVN Gilroy Italic',
+                fontFamily: 'SVN Gilroy Bold',
                 fill: '#ffffff',
                 textAlign: 'left',
                 originX: 'center',
                 originY: 'center',
                 lineHeight: 1,
                 fontWeight: 'bold',
+                fontStyle: 'italic',
                 name: 'nameText',
                 width: cardCanvas.width / 1.5,
                 selectable: false,
@@ -111,13 +112,14 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 left: cardCanvas.width / 1.85,
                 top: cardCanvas.height / 1.40,
                 fontSize: fontSizeHoursText, // Responsive font size
-                fontFamily: 'SVN Gilroy Italic',
+                fontFamily: 'SVN Gilroy Bold',
                 fill: '#ffffff',
                 textAlign: 'center',
                 originX: 'center',
                 originY: 'center',
                 lineHeight: 1,
                 fontWeight: 'bold',
+                fontStyle: 'italic',
                 name: 'hoursText',
                 width: cardCanvas.width / 1.6,
                 selectable: false,
@@ -166,7 +168,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 </div>
                 <div className="mt-4 text-center w-full">
                     <div className="flex justify-center items-center mt-2 text-white border-b border-white w-full px-2">
-                        <label className="flex items-center w-full cursor-pointer justify-between text-[24px]">
+                        <label className="flex items-center w-full cursor-pointer justify-between text-[20px]">
                             <span className="mr-2 font-unbounded">{text?.page4?.upload}</span>
                             <svg
                                 className="cursor-pointer w-8 h-8"
@@ -188,7 +190,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                         <input
                             type="text"
                             placeholder={text?.page4?.namePlaceholder}
-                            className="bg-transparent font-unbounded outline-none text-white w-full placeholder-white text-[24px] pr-10"
+                            className="bg-transparent font-normal outline-none text-white w-full placeholder-white placeholder:text-[20px] placeholder:font-unbounded pr-10"
                             onChange={handleNameChange}
                         />
                         <svg
@@ -209,7 +211,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                             dateFormat="yyyy/MM/dd"
                             minDate={new Date(1999, 0, 1)}
                             maxDate={new Date()}
-                            className="bg-transparent outline-none text-white w-full placeholder-white font-unbounded text-[24px]"
+                            className="bg-transparent outline-none text-white w-full placeholder-white placeholder:text-[19px] placeholder:font-unbounded"
                         />
                         <svg
                             width="32"
@@ -221,12 +223,12 @@ const CreateAvatarPage = ({ setNextPage }) => {
                             <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z" />
                         </svg>
                     </div>
-                            <button
-                                onClick={handleFinish}
-                                className="justify-center hidden xl:flex mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px]"
-                            >
-                                {text?.page4?.finish}
-                            </button>
+                    <button
+                        onClick={handleFinish}
+                        className="font-unbounded justify-center hidden xl:flex mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px]"
+                    >
+                        {text?.page4?.finish}
+                    </button>
                 </div>
             </div>
 
@@ -237,12 +239,12 @@ const CreateAvatarPage = ({ setNextPage }) => {
                     </div>
                 </div>
             </div>
-                    <button
-                        onClick={handleFinish}
-                        className="justify-center flex xl:hidden mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px] md:max-w-[584px] mb-5"
-                    >
-                        {text?.page4?.finish}
-                    </button>
+            <button
+                onClick={handleFinish}
+                className="font-unbounded justify-center flex xl:hidden mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px] md:max-w-[584px] mb-5"
+            >
+                {text?.page4?.finish}
+            </button>
         </div>
     );
 };
