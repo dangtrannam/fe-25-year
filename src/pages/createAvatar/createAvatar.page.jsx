@@ -2,7 +2,8 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import LanguageContext from '../../components/LanguageContext';
 import { isMobile } from '../../utils';
 import { useCardUploadImage, useInitCanvas, useInitCardCanvas, usePinPanImage, useUploadImage } from './hooks';
-import { fabric } from 'fabric';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const CreateAvatarPage = ({ setNextPage }) => {
     const { text, language } = useContext(LanguageContext);
@@ -15,7 +16,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
     useInitCanvas(avatarCanvasRef, setAvatarCanvas, language);
     useUploadImage(avatarCanvas, userImageRef, userImageSrc, [userImageSrc, avatarCanvasRef]);
     usePinPanImage(avatarCanvas, userImageRef, hammerRef, [userImageSrc, avatarCanvas]);
-    
+
     const cardCanvasRef = useRef(null);
     const [cardCanvas, setCardCanvas] = useState(null);
     const cardUserImageRef = useRef(null);
@@ -66,12 +67,12 @@ const CreateAvatarPage = ({ setNextPage }) => {
         if (name) {
             const existingText = cardCanvas.getObjects().filter(obj => obj.name === 'nameText');
             if (existingText.length > 0) existingText.forEach(obj => cardCanvas.remove(obj));
-            
+
             const nameText = new fabric.Textbox(name, {
                 left: cardCanvas.width / 1.70,
                 top: cardCanvas.height / 1.76,
                 fontSize: 16 * PIXEL_RATIO,
-                fontFamily: 'Inter', 
+                fontFamily: 'Inter',
                 fill: '#ffffff',
                 textAlign: 'left',
                 originX: 'center',
@@ -80,7 +81,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 fontWeight: 'bold',
                 fontStyle: 'italic',
                 name: 'nameText',
-                width: cardCanvas.width / 2,
+                width: cardCanvas.width / 1.5,
                 selectable: false,
             });
 
@@ -91,7 +92,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
         if (date) {
             const existingHours = cardCanvas.getObjects().filter(obj => obj.name === 'hoursText');
             if (existingHours.length > 0) existingHours.forEach(obj => cardCanvas.remove(obj));
-    
+
             const selectedDate = new Date(date);
             const now = new Date();
             const diffInMs = now - selectedDate;
@@ -122,7 +123,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                     offsetY: -5
                 }
             });
-    
+
             cardCanvas.add(hoursText);
             cardCanvas.bringToFront(hoursText);
         }
@@ -143,9 +144,14 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 <div className="mt-4 text-center">
                     <div className="flex justify-center items-center mt-2 text-white border-b border-white w-full px-2">
                         <label className="flex items-center w-full cursor-pointer justify-between text-[24px]">
-                            <span className="mr-2">{text?.page4?.upload}</span>
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M5 20h14v-2H5v2zm7-18l-5 5h3v4h4v-4h3l-5-5zM5 16h14v-2H5v2z" />
+                            <span className="mr-2 font-unbounded">{text?.page4?.upload}</span>
+                            <svg
+                                className="cursor-pointer w-8 h-8"
+                                viewBox="0 0 24 24"
+                                fill="white"
+                            >
+                                <path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z" />
+                                <title>Upload</title>
                             </svg>
                             <input
                                 type="file"
@@ -155,23 +161,42 @@ const CreateAvatarPage = ({ setNextPage }) => {
                             />
                         </label>
                     </div>
-                    <div className="flex justify-center items-center mt-2 text-white border-b border-white w-full px-2">
+                    <div className="flex items-center mt-2 text-white border-b border-white w-full px-2">
                         <input
                             type="text"
                             placeholder={text?.page4?.namePlaceholder}
-                            className="bg-transparent outline-none text-white w-full placeholder-white text-[24px]"
+                            className="bg-transparent font-unbounded outline-none text-white w-full placeholder-white text-[24px] pr-10"
                             onChange={handleNameChange}
                         />
+                        <svg
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="white"
+                            className="min-w-[32px]"
+                        >
+                            <path d="M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-4.41 0-8 1.79-8 4v2h16v-2c0-2.21-3.59-4-8-4z" />
+                        </svg>
                     </div>
-                    <div className="flex justify-center items-center mt-2 text-white border-b border-white w-full px-2 text-[24px]">
-                        <input
-                            type="date"
-                            placeholder={text?.page4?.datePlaceholder}
-                            min="1999-01-01"
-                            max={new Date().toISOString().split("T")[0]}
-                            className="bg-transparent outline-none text-white w-full placeholder-white"
-                            onChange={handleDateChange}
+                    <div className="flex items-center mt-2 justify-between text-white border-b border-white w-full px-2 cursor-pointer">
+                        <DatePicker
+                            selected={date}
+                            onChange={(date) => setSelectedDate(date)}
+                            placeholderText={text?.page4?.datePlaceholder || "Select a date"}
+                            dateFormat="yyyy/MM/dd"
+                            minDate={new Date(1999, 0, 1)}
+                            maxDate={new Date()}
+                            className="bg-transparent outline-none text-white w-full placeholder-white font-unbounded text-[24px]"
                         />
+                        <svg
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="white"
+                            className="min-w-[32px]"
+                        >
+                            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z" />
+                        </svg>
                     </div>
                     <button
                         onClick={handleFinish}
