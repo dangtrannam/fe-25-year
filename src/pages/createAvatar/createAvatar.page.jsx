@@ -50,7 +50,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
             : Math.max(1080 / 2.5 / originalWidth, 1080 / 2.5 / originalHeight);
 
         console.log("exportImage -> scaleFactor", name, scaleFactor);
-            
+
 
         const dataURL = canvas.toDataURL({
             format: "png",
@@ -109,7 +109,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
             `;
 
             const hoursText = new fabric.Textbox(fullText, {
-                left: cardCanvas.width / 2,
+                left: cardCanvas.width / 1.85,
                 top: cardCanvas.height / 1.40,
                 fontSize: fontSizeHoursText, // Responsive font size
                 fontFamily: 'Inter',
@@ -120,7 +120,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 lineHeight: 1,
                 fontWeight: 'bold',
                 name: 'hoursText',
-                width: cardCanvas.width / 2,
+                width: cardCanvas.width / 1.6,
                 selectable: false,
             });
 
