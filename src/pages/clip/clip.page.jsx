@@ -8,7 +8,7 @@ const ClipIntroductionPage = ({ currentPage, setNextPage }) => {
         responsive: true,
         fluid: true,
         autoplay: true,
-        muted: false,
+        muted: true,
         playsinline: true,
         sources: [{
             src: '/video/video_final.mp4',
