@@ -6,3 +6,38 @@
 * {
     font-family: 'Unbounded', sans-serif;
 }
+
+@font-face {
+    font-family: 'SVN Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../src/fonts/SVN-Gilroy-Regular.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SVN Gilroy Italic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../src/fonts/SVN-Gilroy-Italic.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SVN Gilroy SemiBold';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../src/fonts/SVN-Gilroy-SemiBold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SVN Gilroy Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../src/fonts/SVN-Gilroy-Bold.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SVN Gilroy Bold Italic';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../src/fonts/SVN-Gilroy-Bold-Italic.otf') format('truetype');
+}
