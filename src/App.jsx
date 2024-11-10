@@ -33,7 +33,7 @@ function App() {
         <CreateAvatarPage setNextPage={() => setCurrentPage(5)} />
       </div>
       <div className={getClassName(5)}>
-        <AvatarResultPage setNextPage={() => setCurrentPage(1)} />
+        <AvatarResultPage setNextPage={() => setCurrentPage(4)} />
       </div>
     </div>
   );
