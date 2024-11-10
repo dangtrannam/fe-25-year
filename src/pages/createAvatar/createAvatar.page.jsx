@@ -38,14 +38,19 @@ const CreateAvatarPage = ({ setNextPage }) => {
         exportImage(avatarCanvas, "avatarImage");
         exportImage(cardCanvas, "cardImage");
         setNextPage();
+
+        console.log("Finish");
     };
 
     const exportImage = (canvas, name = "avatarImage") => {
         const originalWidth = canvas.width;
         const originalHeight = canvas.height;
         const scaleFactor = isMobile()
-            ? Math.max(2048 / originalWidth, 2048 / originalHeight)
-            : Math.max(1080 / originalWidth, 1080 / originalHeight);
+            ? Math.max(2048 / 2.5 / originalWidth, 2048 / 2.5 / originalHeight)
+            : Math.max(1080 / 2.5 / originalWidth, 1080 / 2.5 / originalHeight);
+
+        console.log("exportImage -> scaleFactor", name, scaleFactor);
+            
 
         const dataURL = canvas.toDataURL({
             format: "png",
