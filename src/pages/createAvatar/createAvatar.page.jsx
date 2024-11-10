@@ -18,6 +18,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
     const [cardCanvas, setCardCanvas] = useState(null);
     const cardUserImageRef = useRef(null);
     const cardHammerRef = useRef(null);
+
     useInitCardCanvas(cardCanvasRef, setCardCanvas);
     useCardUploadImage(cardCanvas, cardUserImageRef, userImageSrc, [userImageSrc, cardCanvasRef]);
     usePinPanImage(cardCanvas, cardUserImageRef, cardHammerRef, [userImageSrc, cardCanvas]);
@@ -31,14 +32,15 @@ const CreateAvatarPage = ({ setNextPage }) => {
     };
 
     const handleFinish = () => {
-        exportImage();
+        exportImage(avatarCanvas, "avatarImage");
+        exportImage(cardCanvas, "cardImage");
         setNextPage();
     };
 
-    const exportImage = () => {
+    const exportImage = (canvas, name = "avatarImage") => {
         // Save the original canvas dimensions
-        const originalWidth = avatarCanvas.width;
-        const originalHeight = avatarCanvas.height;
+        const originalWidth = canvas.width;
+        const originalHeight = canvas.height;
 
         // Calculate the scale factor
         let scaleFactor;
@@ -48,14 +50,14 @@ const CreateAvatarPage = ({ setNextPage }) => {
             scaleFactor = Math.max(1080 / originalWidth, 1080 / originalHeight);
         }
 
-        const dataURL = avatarCanvas.toDataURL({
+        const dataURL = canvas.toDataURL({
             format: "png",
             quality: 1.0, // Maximum quality
             multiplier: scaleFactor // Adjust the resolution without resizing the canvas
         });
 
         
-        localStorage.setItem("avatarImage", dataURL);
+        localStorage.setItem(name, dataURL);
     }
 
     return (

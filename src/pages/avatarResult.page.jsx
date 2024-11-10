@@ -6,10 +6,16 @@ const AvatarResultPage = ({ setNextPage }) => {
     const avatarDataURLLocalStorage = localStorage.getItem("avatarImage");
     const [avatarDataURL, setAvatarDataURL] = useState(avatarDataURLLocalStorage);
 
+    const cardDataURLLocalStorage = localStorage.getItem("cardImage");
+    const [cardDataURL, setCardDataURL] = useState(cardDataURLLocalStorage);
+
     useEffect(() => {
         const handleStorageChange = () => {
             const newAvatarDataURL = localStorage.getItem("avatarImage");
             setAvatarDataURL(newAvatarDataURL);
+
+            const newCardDataURL = localStorage.getItem("cardImage");
+            setCardDataURL(newCardDataURL);
         };
 
         window.addEventListener("storage", handleStorageChange);
@@ -18,6 +24,9 @@ const AvatarResultPage = ({ setNextPage }) => {
         const intervalId = setInterval(() => {
             const currentAvatarDataURL = localStorage.getItem("avatarImage");
             setAvatarDataURL(currentAvatarDataURL);
+
+            const currentCardDataURL = localStorage.getItem("cardImage");
+            setCardDataURL(currentCardDataURL);
         }, 1000);
 
         return () => {
@@ -61,9 +70,10 @@ const AvatarResultPage = ({ setNextPage }) => {
     }
 
     return (
-        <div className="flex container items-center h-screen mx-auto justify-center space-x-40">
+        <div className="flex container items-start h-screen mx-auto justify-center space-x-40 mt-[10vh]">
+            <div className=''></div>
             {/* Avatar Section */}
-            <div className="p-9 flex flex-col items-center w-auto mt-56">
+            <div className="p-9 flex flex-col items-center w-auto">
                 <div className="overflow-hidden flex items-center justify-center rounded-[23px] w-full">
                     {avatarDataURL &&
                         <img src={avatarDataURL} alt="Avatar" className="w-[40vh]" />
@@ -93,14 +103,24 @@ const AvatarResultPage = ({ setNextPage }) => {
             </div>
 
             {/* E-Card Section */}
-            <div className="p-6 flex flex-col items-center w-[320px]">
+            <div className="p-6 flex flex-col items-center w-[40vh]">
                 <div className="overflow-hidden flex items-center justify-center rounded-[23px] w-full">
-                    <img src="/images/card/ecardviet.png" alt="E-Card" className="w-full h-auto rounded-lg" />
+                    {cardDataURL && 
+                        <img src={cardDataURL} alt="Card" />
+                    }
                 </div>
                 <div className="mt-4 text-center space-y-4 w-full">
                     <div className="flex justify-center mt-2">
-                        <button className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
+                        <button onClick={() => handleDownload(cardDataURL)}
+                            className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
                             TẢI VỀ
+                        </button>
+                    </div>
+                    <div className="flex justify-center mt-2">
+                        <button
+                            onClick={() => handleShare(cardDataURL)}
+                            className="text-white w-full max-w-[200px] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-4">
+                            KHOE NGAY
                         </button>
                     </div>
                     <div className="flex justify-center mt-2">
