@@ -160,7 +160,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
     }, [name, date, cardCanvas]);
 
     return (
-        <div className="flex flex-col md:flex-row justify-center items-center p-4 md:p-0">
+        <div className="flex flex-col xl:flex-row justify-center items-center p-4 md:p-0">
             <div className="p-6 flex flex-col items-center w-full  md:max-w-[584px]">
                 <div className="overflow-hidden flex items-center justify-center rounded-[23px] w-full">
                     <canvas ref={avatarCanvasRef} id="avatarCanvas" />
@@ -224,7 +224,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                     </div>
                             <button
                                 onClick={handleFinish}
-                                className="hidden md:flex mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px]"
+                                className="hidden xl:flex mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px]"
                             >
                                 {text?.page4?.finish}
                             </button>
@@ -240,7 +240,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
             </div>
                     <button
                         onClick={handleFinish}
-                        className="flex md:hidden mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px]"
+                        className="flex xl:hidden mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px] md:max-w-[584px] mb-5"
                     >
                         {text?.page4?.finish}
                     </button>

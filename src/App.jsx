@@ -34,10 +34,10 @@ function App() {
         <div className={getClassName(3)}>
           <ClipIntroductionPage currentPage={currentPage} setNextPage={() => setCurrentPage(4)} play={playVideo} setPlayVideo={setPlayVideo}/>
         </div>
-        <div className={`${getClassName(4)} overflow-y-scroll md:overflow-y-hidden`}>
+        <div className={`${getClassName(4)} overflow-y-scroll xl:overflow-y-hidden`}>
           <CreateAvatarPage setNextPage={() => setCurrentPage(5)} />
         </div>
-        <div className={`${getClassName(5)} overflow-y-scroll md:overflow-y-hidden`}>
+        <div className={`${getClassName(5)} overflow-y-scroll xl:overflow-y-hidden`}>
           <AvatarResultPage setNextPage={() => setCurrentPage(4)} />
         </div>
       </div>
