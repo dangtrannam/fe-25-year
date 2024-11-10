@@ -12,20 +12,18 @@ const StartPage = ({ setNextPage }) => {
       <div className="flex flex-col items-center justify-center xl:justify-start w-full px-4 flex-1 self-start">
         <div className="flex flex-col items-center text-center mt-4 md:mt-6 w-full max-w-[90vw]">
           {language === 'vi' ? (
-            <div className="w-full h-full justify-center mx-auto items-center flex"
-            >
+            <div className="w-full h-full justify-center mx-auto items-center flex">
               <img
                 src={Logo25YearVi}
-                className="w-[50vh] h-[20vh] sm:w-[50vh] sm:h-[25vh] md:w-[60vh] md:h-[30vh] lg:w-[70vh] lg:h-[35vh] xl:w-[80vh] xl:h-[40vh] 2xl:w-[90vh] 2xl:h-[45vh] object-contain"
+                className="w-[90vw] sm:w-[50vh] sm:h-[25vh] md:w-[60vh] md:h-[30vh] lg:w-[70vh] lg:h-[35vh] xl:w-[80vh] xl:h-[40vh] 2xl:w-[90vh] 2xl:h-[45vh] object-contain"
                 alt="25 Years Logo"
               />
             </div>
           ) : (
-            <div className="w-full h-full justify-center mx-auto items-center flex"
-            >
+            <div className="w-full h-full justify-center mx-auto items-center flex">
               <img
                 src={Logo25YearEn}
-                className="w-[50vh] h-[20vh] sm:w-[50vh] sm:h-[25vh] md:w-[60vh] md:h-[30vh] lg:w-[70vh] lg:h-[35vh] xl:w-[80vh] xl:h-[40vh] 2xl:w-[90vh] 2xl:h-[45vh] object-contain"
+                className="w-[90vw] sm:w-[50vh] sm:h-[25vh] md:w-[60vh] md:h-[30vh] lg:w-[70vh] lg:h-[35vh] xl:w-[80vh] xl:h-[40vh] 2xl:w-[90vh] 2xl:h-[45vh] object-contain"
                 alt="25 Years Logo"
               />
             </div>
