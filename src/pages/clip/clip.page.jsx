@@ -2,9 +2,9 @@ import { useContext } from 'react';
 import VideoPlayer from "./videoPlayer";
 import LanguageContext from '../../components/LanguageContext';
 import { isMobile } from '../../utils';
-import { videoMobile, videoWeb } from './video.constant';
+// import { videoMobile, videoWeb } from './video.constant';
 
-const videoUrl = isMobile() ? videoMobile : videoWeb;
+const videoUrl = isMobile() ? '/video/video_final_mobile.mp4' : '/video/video_final.mp4';
 const videoAspectClass = isMobile() ? 'aspect-[9/16]' : 'aspect-[16/9]';
 const ClipIntroductionPage = ({ currentPage, setNextPage, play, setPlayVideo }) => {
     const { text } = useContext(LanguageContext);
