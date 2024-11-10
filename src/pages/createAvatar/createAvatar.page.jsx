@@ -200,7 +200,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                     <div className="flex items-center mt-2 justify-between text-white border-b border-white w-full px-2 cursor-pointer">
                         <DatePicker
                             selected={date}
-                            onChange={handleDateChange}
+                            onChange={(date) => setDate(date)}
                             placeholderText={text?.page4?.datePlaceholder || "Select a date"}
                             dateFormat="yyyy/MM/dd"
                             minDate={new Date(1999, 0, 1)}
