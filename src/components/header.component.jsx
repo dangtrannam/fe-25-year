@@ -8,7 +8,9 @@ const HeaderComponent = () => {
   return (
     <header className="p-4 relative">
       <div className="absolute left-4 top-4 text-white font-semibold flex flex-col items-start">
-        <span className="text-sm sm:text-base">Chọn ngôn ngữ</span>
+        <span className="text-sm sm:text-base">
+          {language === 'en' ? 'Select Language' : 'Chọn Ngôn Ngữ'}
+        </span>
         <button
           onClick={toggleLanguage}
           className="hover:bg-white/10 px-2 py-1 rounded transition-colors"
