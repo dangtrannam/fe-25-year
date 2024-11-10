@@ -38,7 +38,7 @@ const CircularProgress = ({ currentPage, setNextPage }) => {
                 });
 
                 gsap.to('.year', {
-                    y: -(100 + 64) * i,
+                    y: -(100 + 68.1) * i,
                     duration: 3,
                     delay: 1,
                 });

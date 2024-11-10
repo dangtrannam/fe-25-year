@@ -8,7 +8,7 @@ const ClipIntroductionPage = ({ currentPage, setNextPage }) => {
         responsive: true,
         fluid: true,
         autoplay: true,
-        muted: true,
+        muted: false,
         playsinline: true,
         sources: [{
             src: '/video/video_final.mp4',
@@ -18,13 +18,9 @@ const ClipIntroductionPage = ({ currentPage, setNextPage }) => {
 
     return (
         <div className="h-screen">
-        <HeaderComponent />
-        <div className="flex items-center justify-center h-[calc(90vh-6rem)] relative">
+        <div className="flex items-center justify-center h-full relative">
             <div className="w-full aspect-video">
-                <VideoPlayer
-                    options={videoJsOptions}
-                    onEnded={setNextPage}
-                />
+                <VideoPlayer options={videoJsOptions} onEnded={setNextPage} />
             </div>
             <button
                 onClick={setNextPage}
