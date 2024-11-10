@@ -4,9 +4,9 @@ import HeaderComponent from '../components/header.component';
 
 const StartPage = ({ setNextPage }) => {
     return (
-        <div className="overflow-x-hidden min-h-screen">
+        <div className="overflow-x-hidden min-h-screen flex flex-col">
             <HeaderComponent />
-            <div className="flex flex-col items-center justify-center w-full px-4">
+            <div className="flex flex-col items-center justify-center xl:justify-start w-full px-4 flex-1 self-start">
                 {/* SVG Logo */}
                 <div className="flex flex-col items-center text-center mt-4 md:mt-6 w-full max-w-[90vw]">
                     <SVGLogo />

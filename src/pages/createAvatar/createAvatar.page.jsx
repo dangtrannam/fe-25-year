@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import {useUploadImage, useInitCanvas} from './hooks';
+import { useUploadImage, useInitCanvas } from './hooks';
 
 const CreateAvatarPage = ({ setNextPage }) => {
     const [userImageSrc, setUserImageSrc] = useState(null);
@@ -23,18 +23,12 @@ const CreateAvatarPage = ({ setNextPage }) => {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen">
-            <div className="w-80 p-6 bg-white bg-opacity-10 rounded-xl shadow-lg flex flex-col items-center">
-                <div className="w-48 h-48 rounded-full bg-gray-200 overflow-hidden flex items-center justify-center">
-                    {/* {imageUrl ? (
-                        <img src={imageUrl} alt="User Avatar" className="w-full h-full object-cover" />
-                    ) : (
-                        <span className="text-gray-500">No Image</span>
-                    )} */}
-                    <canvas ref={avatarCanvasRef} className={``} id='avatarCanvas' />
+        <div className="flex flex-col md:flex-row justify-center items-center h-screen p-4">
+            <div className="w-full md:w-80 p-6 bg-white bg-opacity-10 rounded-xl shadow-lg flex flex-col items-center mb-6 md:mb-0">
+                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gray-200 overflow-hidden flex items-center justify-center">
+                    <canvas ref={avatarCanvasRef} id="avatarCanvas" className="w-full h-full" />
                 </div>
-                <div className="mt-4 text-center">
-                    {/* File input for image upload with custom styling */}
+                <div className="mt-4 text-center w-full">
                     <div className="flex justify-center items-center mt-2 text-white border-b border-white w-full px-2">
                         <label className="flex items-center w-full cursor-pointer justify-between">
                             <span className="mr-2">Upload Ảnh</span>
@@ -45,12 +39,10 @@ const CreateAvatarPage = ({ setNextPage }) => {
                                 type="file"
                                 onChange={handleImageUpload}
                                 accept="image/*"
-                                className="hidden" // Hide the default file input
+                                className="hidden"
                             />
                         </label>
                     </div>
-
-                    {/* Additional input fields with icons and borders */}
                     <div className="flex justify-center items-center mt-2 text-white border-b border-white w-full px-2">
                         <input
                             type="text"
@@ -74,8 +66,8 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 </div>
             </div>
 
-            <div className="w-80 p-6 bg-white bg-opacity-10 rounded-xl shadow-lg flex flex-col items-center ml-8">
-                <div className="w-48 h-48 rounded-full bg-gray-200 overflow-hidden">
+            <div className="md:w-80 p-6 bg-white bg-opacity-10 rounded-xl shadow-lg flex flex-col items-center md:ml-8">
+                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gray-200 overflow-hidden">
                     {userImageSrc ? (
                         <img src={userImageSrc} alt="User Image" className="w-full h-full object-cover" />
                     ) : (
