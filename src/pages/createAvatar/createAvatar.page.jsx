@@ -64,8 +64,20 @@ const CreateAvatarPage = ({ setNextPage }) => {
     const [name, setName] = useState('');
     const [date, setDate] = useState('');
 
-    const handleNameChange = (e) => setName(e.target.value);
+    const handleNameChange = (e) => {
+        if (e.target.value.length > 26) return;
+        setName(e.target.value)
+    }
     const handleDateChange = (e) => setDate(e.target.value);
+
+    const calculateFontSize = (text, baseFontSize) => {
+        if (!isMobile()) return baseFontSize;
+        if (text.length > 20) return baseFontSize * 0.45;
+        if (text.length > 18) return baseFontSize * 0.6;
+        if (text.length > 14) return baseFontSize * 0.7;
+        if (text.length > 11) return baseFontSize * 0.85;
+        return baseFontSize;
+    };
 
     const renderTextOnCanvas = () => {
         if (!cardCanvas) return;
@@ -77,9 +89,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
             if (existingText.length > 0) existingText.forEach(obj => cardCanvas.remove(obj));
 
             const baseFontSize = 16 * PIXEL_RATIO;
-            const fontSize = isMobile()
-                ? (name.length > 11 ? baseFontSize * 0.85 : baseFontSize)
-                : baseFontSize;
+            const fontSize = calculateFontSize(name, baseFontSize);
 
             const nameText = new fabric.Textbox(name, {
                 left: cardCanvas.width / 1.5,
@@ -207,25 +217,28 @@ const CreateAvatarPage = ({ setNextPage }) => {
                             <path d="M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-4.41 0-8 1.79-8 4v2h16v-2c0-2.21-3.59-4-8-4z" />
                         </svg>
                     </div>
-                    <div className="flex items-center mt-2 justify-between text-white border-b border-white w-full px-2 cursor-pointer">
-                        <DatePicker
-                            selected={date}
-                            onChange={(date) => setDate(date)}
-                            placeholderText={text?.page4?.datePlaceholder || "Select a date"}
-                            dateFormat="yyyy/MM/dd"
-                            minDate={new Date(1999, 0, 1)}
-                            maxDate={new Date()}
-                            className="bg-transparent outline-none text-white w-full placeholder-white placeholder:text-[19px] font-unbounded font-light"
-                        />
-                        <svg
-                            width="32"
-                            height="32"
-                            viewBox="0 0 24 24"
-                            fill="white"
-                            className="min-w-[32px]"
-                        >
-                            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z" />
-                        </svg>
+                    <div className="flex flex-col items-center mt-2 justify-between ">
+                        <div className='flex flex-row justify-between text-white border-b border-white w-full px-2 cursor-pointer'>
+                            <DatePicker
+                                selected={date}
+                                onChange={(date) => setDate(date)}
+                                placeholderText={text?.page4?.datePlaceholder || "Select a date"}
+                                dateFormat="yyyy/MM/dd"
+                                minDate={new Date(1999, 0, 1)}
+                                maxDate={new Date()}
+                                className="bg-transparent outline-none text-white w-full placeholder-white placeholder:text-[19px] font-unbounded font-light"
+                            />
+                            <svg
+                                width="32"
+                                height="32"
+                                viewBox="0 0 24 24"
+                                fill="white"
+                                className="min-w-[32px]"
+                            >
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z" />
+                            </svg>
+                        </div>
+                        <div className='text-left text-sm w-full text-white font-unbounded font-light p-2'>yyyy/mm/dd</div>
                     </div>
                     <button
                         onClick={handleFinish}
