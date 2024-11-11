@@ -24,7 +24,7 @@ const HeaderComponent = () => {
             <img
               src="/images/logo_fptu.png"
               alt="FPT University Logo"
-              className="w-24 sm:w-32 md:w-40 lg:w-48 h-auto"
+              className="w-44 sm:w-64 md:w-80 h-auto"
             />
           </Link>
           {/* <Link to="#" target="_blank">
