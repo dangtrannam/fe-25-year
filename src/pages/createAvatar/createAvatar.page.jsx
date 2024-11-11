@@ -76,10 +76,15 @@ const CreateAvatarPage = ({ setNextPage }) => {
             const existingText = cardCanvas.getObjects().filter(obj => obj.name === 'nameText');
             if (existingText.length > 0) existingText.forEach(obj => cardCanvas.remove(obj));
 
+            const baseFontSize = 16 * PIXEL_RATIO;
+            const fontSize = isMobile()
+                ? (name.length > 11 ? baseFontSize * 0.85 : baseFontSize)
+                : baseFontSize;
+
             const nameText = new fabric.Textbox(name, {
                 left: cardCanvas.width / 1.5,
                 top: cardCanvas.height / 1.76,
-                fontSize: 16 * PIXEL_RATIO,
+                fontSize: fontSize,
                 fontFamily: 'SVN Gilroy Bold',
                 fill: '#ffffff',
                 textAlign: 'left',
@@ -92,7 +97,6 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 width: cardCanvas.width / 1.5,
                 selectable: false,
             });
-
             cardCanvas.add(nameText);
             cardCanvas.bringToFront(nameText);
         }
