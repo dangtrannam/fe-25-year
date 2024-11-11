@@ -9,7 +9,7 @@ const HeaderComponent = () => {
     <header className="p-4 relative">
       <div className="absolute left-4 top-4 text-white font-semibold flex flex-col items-start">
         <span className="text-sm sm:text-base font-unbounded">
-          {language === 'en' ? 'Select Language' : 'Chọn Ngôn Ngữ'}
+          {language === 'en' ? 'Language' : 'Ngôn Ngữ'}
         </span>
         <button
           onClick={toggleLanguage}
@@ -24,7 +24,7 @@ const HeaderComponent = () => {
             <img
               src="/images/logo_fptu.png"
               alt="FPT University Logo"
-              className="w-16 sm:w-20 md:w-28 lg:w-32 h-auto"
+              className="w-24 sm:w-32 md:w-40 lg:w-48 h-auto"
             />
           </Link>
           {/* <Link to="#" target="_blank">
