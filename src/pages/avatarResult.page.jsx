@@ -95,17 +95,17 @@ const AvatarResultPage = ({ setNextPage }) => {
                 <div className="hidden xl:flex flex-col items-center w-full space-y-4">
                     <button
                         onClick={() => handleDownload(avatarDataURL)}
-                        className="text-white font-unbounded w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white font-unbounded font-light w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.download}
                     </button>
                     <button
                         onClick={() => handleShare(avatarDataURL)}
-                        className="text-white font-unbounded w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white font-unbounded font-light w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.share}
                     </button>
                     <button
                         onClick={() => setNextPage()}
-                        className="text-white font-unbounded w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white font-unbounded font-light w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.createAnother}
                     </button>
                 </div>
@@ -113,17 +113,17 @@ const AvatarResultPage = ({ setNextPage }) => {
                 <div className="flex flex-col items-center w-full space-y-4">
                     <button
                         onClick={() => handleDownload(cardDataURL)}
-                        className="text-white font-unbounded w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white font-unbounded font-light w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.download}
                     </button>
                     <button
                         onClick={() => handleShare(cardDataURL)}
-                        className="text-white font-unbounded w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white font-unbounded font-light w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.share}
                     </button>
                     <button
                         onClick={() => setNextPage()}
-                        className="text-white font-unbounded w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
+                        className="text-white font-unbounded font-light w-full md:w-[35vh] bg-gradient-to-r from-[#5950C5] to-[#DF885B] border-2 border-white rounded-full hover:opacity-90 transition-opacity py-3 md:py-4">
                         {text?.page5?.createAnother}
                     </button>
                 </div>
