@@ -47,7 +47,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
         const originalHeight = canvas.height;
         const scaleFactor = isMobile()
             ? Math.max(2048 / 2.5 / originalWidth, 2048 / 2.5 / originalHeight)
-            : Math.max(1080 / 2.5 / originalWidth, 1080 / 2.5 / originalHeight);
+            : Math.max(1080 / originalWidth, 1080 / originalHeight);
 
         console.log("exportImage -> scaleFactor", name, scaleFactor);
 
