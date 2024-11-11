@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import VideoPlayer from "./videoPlayer";
 import LanguageContext from '../../components/LanguageContext';
 import { isMobile } from '../../utils';
+// import { videoMobile, videoWeb } from './video.constant';
 
 const videoUrl = isMobile() ? '/video/video_final_mobile.mp4' : '/video/video_final.mp4';
 const videoAspectClass = isMobile() ? 'aspect-[9/16]' : 'aspect-[16/9]';
@@ -32,7 +33,7 @@ const ClipIntroductionPage = ({ currentPage, setNextPage, play, setPlayVideo }) 
                         setPlayVideo(false);
                         setNextPage();
                     }}
-                    className="absolute bottom-4 right-4 outline  text-white px-4 py-2 rounded-md transition-colors font-bold sm:px-3 sm:py-1 sm:text-sm"
+                    className="absolute bottom-4 right-4 outline font-unbounded text-white px-4 py-2 rounded-md transition-colors font-bold sm:px-3 sm:py-1 sm:text-sm"
                 >
                     {text?.page3?.skip}
                 </button>

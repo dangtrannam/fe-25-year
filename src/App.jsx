@@ -21,7 +21,7 @@ function App() {
   return (
     <LanguageProvider>
       <div className="relative overflow-hidden w-screen min-h-screen">
-        <BackgroundVideo src="/video/background.mp4" />
+        <BackgroundVideo src='/video/background.mp4' />
         <div className={getClassName(1)}>
           <StartPage setNextPage={() => setCurrentPage(2)} />
         </div>
@@ -32,12 +32,12 @@ function App() {
           }} />
         </div>
         <div className={getClassName(3)}>
-          <ClipIntroductionPage currentPage={currentPage} setNextPage={() => setCurrentPage(4)} play={playVideo} setPlayVideo={setPlayVideo}/>
+          <ClipIntroductionPage currentPage={currentPage} setNextPage={() => setCurrentPage(4)} play={playVideo} setPlayVideo={setPlayVideo} />
         </div>
-        <div className={`${getClassName(4)} overflow-y-scroll md:overflow-y-hidden`}>
+        <div className={`${getClassName(4)} overflow-y-auto`}>
           <CreateAvatarPage setNextPage={() => setCurrentPage(5)} />
         </div>
-        <div className={`${getClassName(5)} overflow-y-scroll md:overflow-y-hidden`}>
+        <div className={`${getClassName(5)} overflow-y-auto`}>
           <AvatarResultPage setNextPage={() => setCurrentPage(4)} />
         </div>
       </div>
