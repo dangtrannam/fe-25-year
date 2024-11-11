@@ -169,7 +169,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                 <div className="mt-4 text-center w-full">
                     <div className="flex justify-center items-center mt-2 text-white border-b border-white w-full px-2">
                         <label className="flex items-center w-full cursor-pointer justify-between text-[20px]">
-                            <span className="mr-2 font-unbounded">{text?.page4?.upload}</span>
+                            <span className="mr-2 font-unbounded font-light">{text?.page4?.upload}</span>
                             <svg
                                 className="cursor-pointer w-8 h-8"
                                 viewBox="0 0 24 24"
@@ -190,7 +190,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                         <input
                             type="text"
                             placeholder={text?.page4?.namePlaceholder}
-                            className="bg-transparent font-normal outline-none text-white w-full placeholder-white placeholder:text-[20px] placeholder:font-unbounded pr-10"
+                            className="bg-transparent font-light outline-none text-white w-full placeholder-white placeholder:text-[20px] font-unbounded pr-10"
                             onChange={handleNameChange}
                         />
                         <svg
@@ -211,7 +211,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                             dateFormat="yyyy/MM/dd"
                             minDate={new Date(1999, 0, 1)}
                             maxDate={new Date()}
-                            className="bg-transparent outline-none text-white w-full placeholder-white placeholder:text-[19px] placeholder:font-unbounded"
+                            className="bg-transparent outline-none text-white w-full placeholder-white placeholder:text-[19px] font-unbounded font-light"
                         />
                         <svg
                             width="32"
@@ -225,7 +225,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
                     </div>
                     <button
                         onClick={handleFinish}
-                        className="font-unbounded justify-center hidden xl:flex mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px]"
+                        className="font-unbounded font-light justify-center hidden xl:flex mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px]"
                     >
                         {text?.page4?.finish}
                     </button>
@@ -241,7 +241,7 @@ const CreateAvatarPage = ({ setNextPage }) => {
             </div>
             <button
                 onClick={handleFinish}
-                className="font-unbounded justify-center flex xl:hidden mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px] md:max-w-[584px] mb-5"
+                className="font-unbounded font-light justify-center flex xl:hidden mt-6 px-4 py-2 w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white rounded-full text-[20px] md:text-[24px] md:max-w-[584px] mb-5"
             >
                 {text?.page4?.finish}
             </button>
