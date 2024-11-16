@@ -36,10 +36,16 @@ const CreateAvatarPage = ({ setNextPage }) => {
     };
 
     const handleFinish = () => {
-        exportImage(avatarCanvas, "avatarImage");
-        exportImage(cardCanvas, "cardImage");
-        setNextPage();
-        setIsLoading(true);
+        try {
+            setIsLoading(true);
+            exportImage(avatarCanvas, "avatarImage");
+            exportImage(cardCanvas, "cardImage");
+            setNextPage();
+        } catch (error) {
+            console.error('Error during finish:', error);
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const exportImage = (canvas, name = "avatarImage") => {
